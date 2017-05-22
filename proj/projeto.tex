@@ -40,31 +40,59 @@ Abstract
 \newpage
 \section{Enunciado do problema}
 Este trabalho se propõe a desenvolver métodos e ferramentas
-para a Análise de Redes Sociais (ARS) via analítica visual (\emph{visual analytics})
-e considerando as propriedades das estruturas sociais.
+para a Análise de Redes Sociais (ARS) via Analítica Visual (\emph{visual analytics}),
+orientados à mineração destas estruturas por especialistas de outras áreas (e.g. linguístas, físicos, cientistas sociais, psicólogos) e
+considerando as propriedades das estruturas sociais.
 Exemplos destas propriedades podem ser divididos em três grupos:
 \begin{itemize}
-    \item Topoógicos: as redes sociais são reportadas como livres de escala, de pequeno mundo e com comunidades~\cite{newman}.
+    \item Topológicos: as redes sociais são reportadas como livres de escala, de pequeno mundo e com comunidades~\cite{newman}.
     \item Textuais: a linguagem nas redes sociais é muitas vezes informal, com abreviações e erros com relação às normas oficiais~\cite{miningSocia}.
     \item Relacionamento entre topologia e texto: há traços do texto produzido pelos participantes que se relacionam à topologia.
-    Hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{teseRfabbri}.
+    Por exemplo, hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{teseRfabbri}.
 \end{itemize}
 
 Em resumo, nossa proposta de desenvolver uma ferramenta de analítica visual para redes sociais
-envolve o processamento dos dados para obtenção de estruturas relevantes,
+envolve
+a integração dos dados a serem analisados,
+o processamento dos dados para obtenção de estruturas relevantes,
 da concepção de visualizações e formas de interação com elas,
-da integração dos dados a serem analisados e da escrita do software para processamento
-dos dados e para a interface de utilização para o usuário.
+e da escrita de software que permita aos pesquisadores de outras áreas
+usufruir destas rotinas através de uma interface unificada.
 
 \subsection{Sua importância}
 Há uma proliferação de redes sociais virtuais que produzem muitos dados
-e estas estruturas estão ainda sendo caracterizadas.
+e as estruturas relacionadas estão ainda sendo caracterizadas.
 Uma ferramenta de analítica visual em cógido aberto, portável para sistemas operacionais diferentes,
 e que seja capaz de lidar com grandes quantidades de dados
 é certamente algo desejável.
 As análises a serem possibilitadas pela ferramenta,
 e necessárias para a concepção da mesma,
-são úteis para aprofundar nossa compreensão das redes sociais virtuais.
+são úteis para aprofundar nossa compreensão das redes sociais,
+principalmente virtuais.
+
+Na pesquisa de doutoramento do candidato deste projeto de pesquisa,
+foram feitas contribuições relevantes à caracterização destas estruturas sociais
+a partir das áreas de redes complexas e de mineração de texto.
+O trabalho aqui proposto visa permitir que estas caracterizações sejam
+aplicadas a um conjunto maior de redes virtuais para melhor delimitar
+sua validade.
+Ao mesmo tempo, este conhecimento sobre as estruturas analisadas possuem um potencial
+para classificações e tipologias nas redes e nos participantes.
+Além da relevância evidente das redes sociais virtuais,
+há interesse neste estudo de tipos (de redes e de participantes)
+de nossa parte, da parte da Rede Nexos de Pesquisa Interdisciplinar~\cite{nexos}
+(do qual o proponente faz parte há anos)
+e da tradição de exatas em geral, que tem grande ênfase na tarefa de classificação.
+
+Melhor relacionando ARS com redes complexas e mineração de texto,
+podemos esperar que haja contribuições na análise de literatura
+e de redes livres de escala.
+Este aspecto não é central para a proposta
+mas mesmo assim ainda relevante pois,
+para melhor permitir o estudo das redes sociais,
+é útil que haja outras redes e textos para comparação,
+o que permitirá a ARS em relação a estas estruturas externas
+e vice-versa.
 
 \subsection{A contribuição se bem sucedido}
 Do ponto de vista dos métodos, as análises pertinentes,
@@ -73,14 +101,14 @@ já resultaram em publicação científica pelo proponente~\cite{stab}
 e pela supervisora~\cite{art1,art2} e deverá implicar em
 maiores contribuições para a compreensão da analítica visual e
 das estruturas sociais virtuais.
-O software a ser desenvolvido certamente é uma contribuição central
+O software a ser desenvolvido certamente é uma contribuição
 pois possibilitará avanços na analítica visual e na caracterização
-dos sistemas.
+dos sistemas sociais e potencialmente também de literatura e redes livres de escala.
 
 \subsection{Trabalhos relevantes}
 A tese de doutoramento do proponente
-\emph{Topologial stability and textual differentiation in human interaction networks:
-statistical analysis, visualization and linked data} apresenta contribuições
+\emph{``Topologial stability and textual differentiation in human interaction networks:
+statistical analysis, visualization and linked data''} apresenta contribuições
 para a caracterização dos sistemas sociais virtuais, algumas destas em processo de publicação~\cite{ops,diff,losd}
 e uma já aceita pela revista Physica A~\cite{stab}.
 Há trabalhos do grupo de pesquisa em visualização de dados e de redes~\cite{cris1,cris2,outro}.
@@ -92,9 +120,9 @@ e~\cite{hci1,hci2} são referência sobre interação humano-computador.
 Há diversos software que deverão ser utilizados no decorrer do trabalho para apreender
 as possibilidades de analítica visual neste contexto (e.g. Gephi, Weka, ccNetViz, D3.js, Three.js).
 Há também literatura e artefatos mais ligados à arte, como a teoria da Gestalt,  
-kiki-bouba, design e estética.
+kiki-bouba, design e estética~\cite{kiki,design,gestalt,estetica}.
 
-\subsubsection{Projeto temático}
+\subsubsection{Projeto de Pesquisa Regular relacionado a esta proposta de pós-doutoramento}
 A supervisora desta proposta, a Profa. Dra. Maria Cristina Ferreira de Oliveira,
 está pesquisando e possui um aluno de mestrado no tema.
 Ela enviou recentemente uma proposta de projeto temático para a FAPESP.
@@ -112,16 +140,20 @@ focos distintos em visual analytics, um de natureza aplicada e outro de natureza
 conceitual. No aspecto aplicado serão considerados (i) o problema de visualização
 de redes de grande escala, com ênfase em redes sociais; e (ii) o problema da análise
 exploratória de espaços de atributos que caracterizam fenômenos multivariados e
-variantes no tempo - por exemplo, resultantes de sensores utilizados para monito-
-ramento ambiental em diversos domínios. Em ambos os casos, a busca por soluções
-escaláveis para grandes volumes de dados representa um desafio. No aspecto con-
-ceitual, dando continuidade a uma colaboração em andamento, iremos conceber e
+variantes no tempo - por exemplo, resultantes de sensores utilizados para monitoramento ambiental em diversos domínios. Em ambos os casos, a busca por soluções
+escaláveis para grandes volumes de dados representa um desafio. No aspecto conceitual, dando continuidade a uma colaboração em andamento, iremos conceber e
 realizar alguns estudos experimentais que contribuam para esclarecer os processos
-cognitivos subjacentes à interpretação de um tipo particular de visualização mul-
-tidimensional, os chamados mapas de similaridade. A análise dos resultados pode
+cognitivos subjacentes à interpretação de um tipo particular de visualização multidimensional, os chamados mapas de similaridade. A análise dos resultados pode
 sugerir modelos conceituais sobre a interpretação desse tipo de mapeamento visual.
 Esperamos com esse estudo contribuir para ampliar o embasamento conceitual sobre
 essas técnicas, essencial para futuros avanços na área.''
+
+Ou seja, há um interesse do grupo VICG (\emph{Visualization, Imaging and Computer Graphics})
+na ARS através da analítica visual que é anterior à concepção desta proposta de pós-doutoramento.
+De forma bastante conveniente, o trabalho de doutoramento do candidato
+fornece um arcabouço de análise, dados já representados como dados ligados e visualizações iniciais,
+o que permite que esta proposta de pós-doutoramento seja realizada com maior facilidade.
+
 
 \section{Resultados esperados}
 São esperados resultados em três frentes:
@@ -129,12 +161,14 @@ São esperados resultados em três frentes:
     \item Melhor caracterização das redes sociais virtuais através de mineração da topologia e do texto.
     \item Avanços em analítica visual de redes sociais principalmente através da consideração das características topológicas e textuais para a interface.
     \item Um software aberto para analítica visual de redes sociais que seja capaz de lidar com grandes volumes de dados e seja executado em navegadores web.
+    \item Um arcabouço de analítica visual que permita comparar redes sociais com outras redes reais (especialmente livres de escala) e com textos diversos (e.g. literatura científica, James Joyce, Shakespeare, Bíblia). 
 \end{itemize}
 
 \subsection{Disseminação dos resultados}\label{diss1}
 O software aberto pretendido deve facilitar a interação com usuários, desenvolvedores e pesquisadores.
-Pretendemos apresentar resultados em conferências e em artigos de revista.
-A circulação de material didático em video deve aumentar a recepção das contribuições.
+Visamos que o software seja utilizado por pesquisadores de áreas diversas como linguística, física e ciências sociais.
+Os resultados devem ser apresentados em conferências e em artigos de revistas, principalmente internacionais.
+A circulação de material didático em video potencialmente aumentará a recepção das contribuições.
 As análises e interfaces devem ser devolvidas às comunidades virtuais que geraram os dados.
 
 \section{Desafios científicos e tecnológicos}
@@ -156,38 +190,44 @@ para a analítica visual.
 Os desafios imediatos para esta tarefa são:
 \begin{itemize}
     \item O uso apropriado de técnicas de visualização.
-    Os layouts para redes orientados a força são os mais usuais em redes sociais por explicitarem comunidades
+    Os layouts para redes orientados a força são os mais usuais em análise de redes sociais por explicitarem comunidades
     e resultarem em figuras esteticamente atraentes, mas a observação de outras características ficam prejudicadas,
     um fenômeno que tem recebido o nome de \emph{hairball effect}.
     Para a visualização de dados multidimensionais, as técnicas podem não ser apropriadas para dados com dimensionalidade muito alta
-    ou não resultarem em coordenadas com fácil interpretação (e.g. no caso do LSP).
-    Além disso, o uso e.g. de cores, formas e glifos possuem um alto impacto na capacidade de análise pelo usuário.
-    \item Viabilizar a interatividade com o montante de dados e medições exposto acima.
-    Quais controles devem ser disponibilizados e com quais controladores?
-    Qual o melhor balanço entre interatividade e quantidade de dados a serem analisados?
-    \item Possibilitar a análise de estruturas arbitrárias.
-    \item A escrita de software.
+    ou não resultarem em coordenadas com fácil interpretação, como no caso do LSP.
+    Além disso, o uso de cores, formas e glifos possuem um alto impacto na capacidade de análise pelo usuário
+    e possuem muitas teorizações envolvidas e são substancialmente modificadas de acordo e.g. com o monitor do usuário,
+    o que dificulta o controle na implementação.
+    \item Viabilizar interatividade apropriada com o montante de dados e medições exposto acima.
+    Por exemplo, quais controles devem ser disponibilizados e com quais controladores?
+    Como compatibilizar a interatividade e a quantidade de dados a serem analisados?
+    \item Possibilitar a análise de estruturas arbitrárias, i.e. de redes formadas por quantidades arbitrárias de mensagens de emails ou da junção de diferentes redes do Facebook.
+    \item A escrita de software multiplataforma que lide com a integração dos dados, processamento destes para obtenção de estruturas relevantes, visualização e interatividade.
 \end{itemize}
 
 \subsection{Meios e métodos para superá-los}
-Os desafios da análise de topologia e texto em redes sociais foram abordados pelo proponente em~\cite{teseRfabbri},
+Desafios da análise de topologia e texto em redes sociais foram abordados pelo proponente em~\cite{teseRfabbri},
 resultando em caracterização das estruturas sociais quanto à estabilidade topológica
 e diferenciação textual.
-Para os outros desafios ligados explicitamente á analítica visual, itemizados acima,
+Para os outros desafios ligados explicitamente à analítica visual, itemizados acima,
 propomos:
 \begin{itemize}
-    \item A utilização de layouts geometricamente inspirados, como os \emph{Hive Plots}~\cite{hive} ou o Versinus (este desenvolvido pelo prroponente~\cite{teseRfabbri}).
+    \item A utilização de layouts geometricamente inspirados, como os \emph{Hive Plots}~\cite{hive} ou o Versinus (este desenvolvido pelo proponente~\cite{teseRfabbri}).
     A possibilidade de utilização de layouts e plots diferentes e de layouts simulâneos em regiões distintas da interface.
-    \item O estudo da literatura da área pode nos fornecer pistas valiosas,
+    Há também a previsão do uso de técnicas de redução de dimensionalidade (e.g. MDS, LSP) dada a grande quantidade de medidas relevantes para analisar redes sociais quanto à topologia e ao texto.
+    Outras visualizações já bem estabelecidas devem ser disponibilizadas e.g. plot quantil-quantil (Q-Q) e de cumulativas de distribuições para viabilizar a análise dos dados de natureza estatística.
+    \item O estudo da literatura da área nos fornece pistas valiosas,
     mas certamente só saberemos quais as reais possibilidades de interatividade através
     da implementação e de testes subsequentes.
     Prevemos também que, evidentemente, as possibilidades de interatividade de processamento massivo de dados
     dependerá do hardware do usuário, uma vez que deverá ser executado no cliente ao menos a visualização.
     \item Para que as estruturas a serem analisadas possam ser integradas e observadas por partes,
-    podemos aproveitas a representação de estruturas sociais como dados ligados já desenvolvida pelo
+    podemos aproveitar a representação de estruturas sociais como dados ligados já desenvolvida pelo
     proponente~\cite{teseRfabbri,losd}.
-    O banco de dados resultante preferencialmente deve ser abrigado em alguma instancia publicamente acessível
+    A base de dados resultante (já obtido) preferencialmente deve ser abrigado em alguma instancia publicamente acessível
     e pode ser expandida no decorrer da pesquisa proposta neste projeto.
+    Uma possibilidade gratuíta é utilizar os serviços do Data-World~\cite{dw} pois abrigam dados ligados,
+    mesmo na grande quantidade que temos, e permitem consultas via SparQL.
     \item Entendemos que o ideal é que o software possa ser executado em navegadores web usuais (e.g. Google Chrome e Firefox).
     Para isso, contamos com boas bibliotecas de visualização.
     A principal é a D3.js, que pode ser integrada com WebGL para possiblitar visualizações mais complexas.
@@ -196,11 +236,11 @@ propomos:
     que utiliza as rotinas em BLAS e LAPACK para processamento matricial e vetorial.
     Devemos estudar as possiblidades de implementar o processamento dos dados diretamente
     em JavaScript para que a arquitetura do software fique simplificada,
-    mas isso não é central, dado que a integração de JavaScript com Python é imediato
+    mas isso não é central, dado que a integração de JavaScript com Python é imediata
     caso sejam utilizados frameworks em Python para desenvolvimento web como Flask e Django.
     A maior diferença neste caso é que a implementação das rotinas de processamento dos dados em Python
     serão executadas pelo servidor ao passo que, se implementadas em JavaScript, poderão ser executadas no cliente
-    (caso seja feita uma implementação em Node.js, o processamento em JavaScript poderá ser executado no servidor).
+    (caso seja feita uma implementação em Node.js, o processamento em JavaScript poderá ser feito no servidor).
     Concebemos toda a implementação em código aberto/software livre para facilitar a colaboração
     no desenvolvimento e permitir que as rotinas sejam publicamente escrutinizadas.
 \end{itemize}
@@ -211,15 +251,18 @@ propomos:
 \section{Disseminação e avaliação}
 Como exposto na Seção~\ref{diss1}, haverá disseminação das contribuições em conferências,
 revistas, video e através do software em código aberto.
+O desenvolvimento deverá estar publicamente acessível desde o começo,
+muito provavelmente em repositório Git na plataforma Github.
 A avaliação deverá ser feita em três frentes: pela nossa própria capacidade de mineração
 dos dados, idealmente para obtenção de resultados suficientemente relevantes para publicação;
-através de testes com usuários em potencial;
+através de testes com usuários em potencial (e.g. da Rede Nexos de Pesquisa Multidisciplinar);
 através da submissão das contribuições de analítica visual para revistas,
 de forma a obter avaliações de revisores especialistas.
 
 \section{Outros apoios}
-FAPESP, grupo, GSoC?.
-NEXOS para usuários e realizar experimentos de interação nas próprias redes sociais.
+Projeto FAPESP, infraestrutura do ICMC/USP, grupo VICG, GSoC.
+NEXOS e labMacambira.sf.net para usuários
+e para realizar experimentos de interação nas próprias redes sociais.
 
 \bibliography{references}
 \end{document}
