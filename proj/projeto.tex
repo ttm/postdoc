@@ -2,6 +2,7 @@
 \usepackage{titling}
 \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
+\usepackage{graphicx}
 \title{Analítica Visual (Visual Analytics) de Topologia e Texto em Redes Sociais}
 \author{\textbf{Proponente:} Renato Fabbri\\
 \textbf{Supervisora:} Profa.  Dra. Maria Cristina Ferreira de Oliveira\\
@@ -51,24 +52,44 @@ Exemplos destas propriedades podem ser divididos em três grupos:
     Por exemplo, hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{teseRfabbri}.
 \end{itemize}
 
-Em resumo, nossa proposta de desenvolver uma ferramenta de analítica visual para redes sociais
-envolve
-a integração dos dados a serem analisados,
+Em resumo, nossa proposta de desenvolver métodos e uma ferramenta de analítica visual para redes sociais
+envolve a integração dos dados a serem analisados,
 o processamento dos dados para obtenção de estruturas relevantes,
 da concepção de visualizações e formas de interação com elas,
 e da escrita de software que permita aos pesquisadores de outras áreas
 usufruir destas rotinas através de uma interface unificada.
 
-\subsection{Terminologia, polissemia e sinônimos}\label{term}
+\subsection{Conceitualização, terminologia, polissemia e sinônimos}\label{term}
 A pesquisa proposta neste documento envolve várias áreas do conhecimento.
 O conhecimento pode ser sistematizado de diversas formas.
 Entendemos que esta divisão é útil para o trabalho:
 \begin{itemize}
 	\item Analítica Visual (\emph{visual analytics}):
 	compreendida aqui como a mineração de dados através de visualização de dados em interfaces interativas.
+   	A Figura~\ref{fig:md} explicita a relação entre mineração de dados e a analítica visual.
+	Embora a área seja recente, existem já algumas formas consagradas pela literatura como apropriadas
+	para abordar a tarefa de analítica visual.
+	Por exemplo, há o lema/mantra de Shneiderman ``Visão geral primeiro, zoom e filtragem, detalhes sob demanda''~\cite{shn},
+	e uma versão extendida dele ``Analise primeiro, mostre o importante, zoom e filtragem, analise mais, detalhes sob demanda''~\cite{keim2006}.
 	\item Análise de Redes Sociais (ARS):
-	realizada a partir das áreas de redes complexas e mineração de texto.
+	concebida nesta proposta a partir das áreas de redes complexas e mineração de texto.
 \end{itemize}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=.5]{figs/md}
+\caption{Típico diagrama expondo as relações entre a analítica visual (abaixo) e a mineração de dados (acima).
+As questões principais são: 1) na analítica visual há a inserção do usuário em várias etapas da aquisição de conhecimento
+a partir dos dados;
+2) na analítica visual há a utilização da visualização de dados pelo usuário para a mineração.
+Como pode-se inferir, a analítica visual implica na utilização de interfaces visuais interativas
+para representação dos dados que possam ser adaptadas contínuamente no processo de obtenção e evidenciação de hipóteses.}
+\label{fig:md}
+\begin{flushleft}\footnotesize
+Fonte: Eduard Gröller~\cite{vis1}.\
+\end{flushleft}
+\end{center}
+\end{figure}
 
 Salta evidente que as duas áreas são também multidisciplinares.
 As áreas diretamente relacionadas pela nossa descrição são também
@@ -193,7 +214,10 @@ A tese de doutoramento do proponente
 statistical analysis, visualization and linked data''} apresenta contribuições
 para a caracterização dos sistemas sociais virtuais, algumas destas em processo de publicação~\cite{ops,diff,losd}
 e uma já aceita pela revista Physica A~\cite{stab}.
-Há trabalhos do grupo de pesquisa em visualização de dados e de redes~\cite{cris1,cris2,outro}.
+O proponente deste projeto de pós-doutoramento concebeu e implementou
+um método de visualização de redes em evolução~\cite{tese,versinus},
+evidenciado na Figura~\ref{fig:ver}.
+Há trabalhos do grupo de pesquisa VICG em visualização de dados e de redes~\cite{cris1,cris2,outro}.
 Os trabalhos~\cite{text1,text2,text3} são base para visualização de dados,
 enquanto~\cite{red1,red2,red3} são especificamente para visualização de redes/grafos
 e~\cite{text1,text2,text3} são sobre visualização para mineração de texto.
@@ -203,6 +227,25 @@ Há diversos software que deverão ser utilizados no decorrer do trabalho para apr
 as possibilidades de analítica visual neste contexto (e.g. Gephi, Weka, ccNetViz, D3.js, Three.js).
 Há também literatura e artefatos mais ligados à arte, como a teoria da Gestalt,  
 kiki-bouba, design e estética~\cite{kiki,design,gestalt,estetica}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=.25]{figs/versinus_}
+\caption{Um quadro do método de visualização de visualização de redes em evolução via animações
+(chamado Versinus)).
+Os vértices mais conectados (hubs) estão na metade do período da senóide à esquerda.
+Os vértices intermediários estão na segunda metade d senóide,
+enquanto os periféricos estão na linha reta do lado direito e superior.
+Os pontos brancos na parte de baixo da imagem mantém uma 
+Os pontos brancos na parte inferior, com números, mantêm o controle da posição do vértice na ordenação global.
+As medições piscam periodicamente perto dos vértices com os quais elas estão relacionadas.
+}
+\label{fig:ver}
+\begin{flushleft}\footnotesize
+Fonte: figura feita pelo proponente.\
+\end{flushleft}
+\end{center}
+\end{figure}
 
 \subsubsection{Projeto de Pesquisa Regular relacionado a esta proposta de pós-doutoramento}
 A supervisora desta proposta, a Profa. Dra. Maria Cristina Ferreira de Oliveira,
@@ -282,12 +325,30 @@ Os desafios imediatos para esta tarefa são:
     Além disso, o uso de cores, formas e glifos possuem um alto impacto na capacidade de análise pelo usuário
     e possuem muitas teorizações envolvidas e são substancialmente modificadas de acordo e.g. com o monitor do usuário,
     o que dificulta o controle na implementação.
+    Para exemplificar este aspecto desafiador do trabalho proposto,
+    na Figura~\ref{fig:gv} está uma sistematização bastante resumida de parte das questões envolvidas
+    apenas na visualização de grafos.
     \item Viabilizar interatividade apropriada com o montante de dados e medições exposto acima.
     Por exemplo, quais controles devem ser disponibilizados e com quais controladores?
     Como compatibilizar a interatividade e a quantidade de dados a serem analisados?
     \item Possibilitar a análise de estruturas arbitrárias, i.e. de redes formadas por quantidades arbitrárias de mensagens de emails ou da junção de diferentes redes do Facebook.
     \item A escrita de software multiplataforma que lide com a integração dos dados, processamento destes para obtenção de estruturas relevantes, visualização e interatividade.
 \end{itemize}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=.65]{figs/Map_}
+\caption{Resumo de opções relacionadas à visualização de grafos.
+Uma visualização de grafo em evolução pode ser feita por imagens ou animação,
+pode ser feita em tempo real ou diferido, pode envolver empacotamento de vértices ou arestas,
+pode ser baseada na representação do grafo em matrizes ou via diagramas nó-aresta.
+Neste último caso, há no mínimo que se considerar os glifos usados ara os vértices
+e os posicionamentos destes.}
+\label{fig:ver}
+\begin{flushleft}\footnotesize
+Fonte: figura feita pelo proponente.\
+\end{flushleft}
+\end{center}
+\end{figure}
 
 \subsection{Meios e métodos para superá-los}
 Desafios da análise de topologia e texto em redes sociais foram abordados pelo proponente em~\cite{teseRfabbri},
