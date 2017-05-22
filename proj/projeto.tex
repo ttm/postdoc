@@ -47,9 +47,9 @@ considerando as propriedades das estruturas sociais.
 Exemplos destas propriedades podem ser divididos em três grupos:
 \begin{itemize}
     \item Topológicos: as redes sociais são reportadas como livres de escala, de pequeno mundo e com comunidades~\cite{newman}.
-    \item Textuais: a linguagem nas redes sociais é muitas vezes informal, com abreviações e erros com relação às normas oficiais~\cite{miningSocia}.
+    \item Textuais: a linguagem nas redes sociais é muitas vezes informal, com abreviações e erros com relação às normas oficiais~\cite{miningSocial}.
     \item Relacionamento entre topologia e texto: há traços do texto produzido pelos participantes que se relacionam à topologia.
-    Por exemplo, hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{teseRfabbri}.
+    Por exemplo, hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{tese}.
 \end{itemize}
 
 Em resumo, nossa proposta de desenvolver métodos e uma ferramenta de analítica visual para redes sociais
@@ -97,7 +97,7 @@ multidisciplinares: mineração de dados, visualização de dados, interfaces intera
 redes complexas, mineração de texto.
 Além disso, as áreas são recentes.
 As redes complexas surgiram como área de investigação reconhecida no
-final da década de 90~\cite{rcH};
+final da década de 90~\cite{newman};
 os primeiros workshops de mineração de texto ocorreram em 1999~\cite{mtH};
 como área independente, o desenho de grafos (\emph{graph drawing}) surgiu na década de 1990~\cite{gdH}.
 Ainda não citado, mas importante para a forma como abordamos alguns dos
@@ -217,12 +217,11 @@ e uma já aceita pela revista Physica A~\cite{stab}.
 O proponente deste projeto de pós-doutoramento concebeu e implementou
 um método de visualização de redes em evolução~\cite{tese,versinus},
 evidenciado na Figura~\ref{fig:ver}.
-Há trabalhos do grupo de pesquisa VICG em visualização de dados e de redes~\cite{cris1,cris2,outro}.
-Os trabalhos~\cite{text1,text2,text3} são base para visualização de dados,
-enquanto~\cite{red1,red2,red3} são especificamente para visualização de redes/grafos
-e~\cite{text1,text2,text3} são sobre visualização para mineração de texto.
-Os trabalhos~\cite{visa,visa2,visa3} são bastante relevantes sobre visual analytics
-e~\cite{hci1,hci2} são referência sobre interação humano-computador.
+Há trabalhos do grupo de pesquisa VICG em visualização de dados e de redes~\cite{art1,art2,art3}.
+Os trabalhos~\cite{vd1,vd2} são base para visualização de dados,
+enquanto~\cite{Viz1,Viz2,Viz3} são especificamente para visualização de redes/grafos
+e~\cite{text1,text2} são sobre mineração de texto.
+Os trabalhos~\cite{visa,visa2} são bastante relevantes para a analítica visual..
 Há diversos software que deverão ser utilizados no decorrer do trabalho para apreender
 as possibilidades de analítica visual neste contexto (e.g. Gephi, Weka, ccNetViz, D3.js, Three.js).
 Há também literatura e artefatos mais ligados à arte, como a teoria da Gestalt,  
@@ -351,13 +350,13 @@ Fonte: figura feita pelo proponente.\
 \end{figure}
 
 \subsection{Meios e métodos para superá-los}
-Desafios da análise de topologia e texto em redes sociais foram abordados pelo proponente em~\cite{teseRfabbri},
+Desafios da análise de topologia e texto em redes sociais foram abordados pelo proponente em~\cite{tese},
 resultando em caracterização das estruturas sociais quanto à estabilidade topológica
 e diferenciação textual.
 Para os outros desafios ligados explicitamente à analítica visual, itemizados acima,
 propomos:
 \begin{itemize}
-    \item A utilização de layouts geometricamente inspirados, como os \emph{Hive Plots}~\cite{hive} ou o Versinus (este desenvolvido pelo proponente~\cite{teseRfabbri}).
+    \item A utilização de layouts geometricamente inspirados, como os \emph{Hive Plots}~\cite{hive} ou o Versinus (este desenvolvido pelo proponente~\cite{tese}).
     A possibilidade de utilização de layouts e plots diferentes e de layouts simulâneos em regiões distintas da interface.
     Há também a previsão do uso de técnicas de redução de dimensionalidade (e.g. MDS, LSP) dada a grande quantidade de medidas relevantes para analisar redes sociais quanto à topologia e ao texto.
     Outras visualizações já bem estabelecidas devem ser disponibilizadas e.g. plot quantil-quantil (Q-Q) e de cumulativas de distribuições para viabilizar a análise dos dados de natureza estatística.
@@ -368,7 +367,7 @@ propomos:
     dependerá do hardware do usuário, uma vez que deverá ser executado no cliente ao menos a visualização.
     \item Para que as estruturas a serem analisadas possam ser integradas e observadas por partes,
     podemos aproveitar a representação de estruturas sociais como dados ligados já desenvolvida pelo
-    proponente~\cite{teseRfabbri,losd}.
+    proponente~\cite{tese,losd}.
     A base de dados resultante (já obtido) preferencialmente deve ser abrigado em alguma instancia publicamente acessível
     e pode ser expandida no decorrer da pesquisa proposta neste projeto.
     Uma possibilidade gratuíta é utilizar os serviços do Data-World~\cite{dw} pois abrigam dados ligados,
@@ -401,7 +400,7 @@ Expandindo o argumento:
 	é graduado em artes (composição musical); realizou mestrado e doutorado na física computacional
 	com contribuições científicas de nítido cruzamento entre física,
 	estatísica, mineração de texto, redes complexas, ontologias e dados ligados,
-	programação, e artes~\cite{msc,tese,stab,diffT,vers,losd,wavelets,sintGran,KS}.
+	programação, e artes~\cite{msc,tese,stab,diff,versinus,losd,wavelets,sintGran,KS}.
 	Além disso, realizou diversas atividades de cunho prático, como composição musical,
 	apresentações artíticas, programação de software original e contribuição para diversos software livres
 	bastante utilizados no mundo todo, e uma consultoria em parceria com a ONU e a Presidência da República~\cite{lattes,tese,msc}.
@@ -416,7 +415,40 @@ a modelagem psicofísica apresentada em seu mestrado~\cite{msc,massa},
 e as implementações computacional que permeiam praticamente toda a sua produção.
 
 \section{Cronograma}
-24 meses.
+Este projeto foi dividido nas seguintes etapas, para as quais foi feita a tabela 1.
+
+\begin{enumerate}
+	\item Revisão da literatura referente à analítica visual.
+	\item Acréscimos aos modelos atuais de analítica visual e visualização de dados aplicados à análise de redes sociais,
+	com o foco no participante da rede, nos pesquisadores em potencial
+	e na classificação/tipologia de redes e participantes.
+	\item Implementação computacional.
+	Estamos já implementando layouts para grafos no ccNetViz.
+	\item Escrita e publicação dos resultados em artigos.
+	Esta etapa está já em andamento pois possuímos diversos escritos com resultados relacionados
+	à mineração e visualização de dados de redes sociais que estão sendo preparados e submetidos para publicação.
+	\item Trocas com pesquisadores externas, estabelecimento de colaborações.
+	\item Elaboração do relatório científico final.
+\end{enumerate}
+
+\begin{table}[h!]
+\label{tab:cron}
+\begin{center}
+  \begin{tabular}{  c |   c |   c  c    | c    }
+      & \multicolumn{1}{|c|}{2017} & \multicolumn{2}{|c|}{2018} & \multicolumn{1}{|c}{2019} \\
+    Atividade & 2$^{\circ}$ & 1$^{\circ}$ & 2$^{\circ}$ & 1$^{\circ}$ \\ \hline 
+
+    1 & $\bullet$ & $\bullet$ & & \\
+    2 & $\bullet$ & $\bullet$ &  &  \\
+    3 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$  \\
+    4 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$  \\
+    5 & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$  \\
+    6 & & & & $\bullet$  \\
+  \end{tabular}
+\caption{Cronograma de atividades ao longo dos semestres.}
+\end{center}
+\end{table}
+
 
 \section{Disseminação e avaliação}
 Como exposto na Seção~\ref{diss1}, haverá disseminação das contribuições em conferências,
