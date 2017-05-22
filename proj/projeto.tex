@@ -59,6 +59,88 @@ da concepção de visualizações e formas de interação com elas,
 e da escrita de software que permita aos pesquisadores de outras áreas
 usufruir destas rotinas através de uma interface unificada.
 
+\subsection{Terminologia, polissemia e sinônimos}\label{term}
+A pesquisa proposta neste documento envolve várias áreas do conhecimento.
+O conhecimento pode ser sistematizado de diversas formas.
+Entendemos que esta divisão é útil para o trabalho:
+\begin{itemize}
+	\item Analítica Visual (\emph{visual analytics}):
+	compreendida aqui como a mineração de dados através de visualização de dados em interfaces interativas.
+	\item Análise de Redes Sociais (ARS):
+	realizada a partir das áreas de redes complexas e mineração de texto.
+\end{itemize}
+
+Salta evidente que as duas áreas são também multidisciplinares.
+As áreas diretamente relacionadas pela nossa descrição são também
+multidisciplinares: mineração de dados, visualização de dados, interfaces interativas,
+redes complexas, mineração de texto.
+Além disso, as áreas são recentes.
+As redes complexas surgiram como área de investigação reconhecida no
+final da década de 90~\cite{rcH};
+os primeiros workshops de mineração de texto ocorreram em 1999~\cite{mtH};
+como área independente, o desenho de grafos (\emph{graph drawing}) surgiu na década de 1990~\cite{gdH}.
+Ainda não citado, mas importante para a forma como abordamos alguns dos
+desafios da pesquisa proposta,
+o termo ``dados ligados'' foi cunhado em 2006~\cite{ldH}.
+Como resultado, o vocabulário não é sempre bem definido,
+há palavras diversas que se referem aos mesmos conceitos
+e conceitos diferentes relacionados a uma mesma palavra.
+
+Uma apresentação detalhada da terminologia, incluindo escolhas consistentes
+de terminologia e os diferentes problemas nas terminologias encontradas,
+foge ao escopo deste projeto de pesquisa.
+Para exemplificar, na área de redes complexas,
+os termos ``rede'' e ``grafo'' são utilizados
+muitas vezes de forma indistinta,
+embora em textos mais cuidadosos a palavra
+grafo se refira à estrutura matemática composta de vértices e arestas (relacionamentos binários/duais entre vértices)
+e rede em geral se refira a grafos encontrados em sistemas reais/empíricos/naturais
+ou ao sistema representado como grafo.
+Outro bom exemplo é a usual indistinção entre mineração de texto,
+linguística computacional e processamento de linguagem natural (PLN).
+Uma distinção coerente entre as áreas pode ser feita considerando
+a mineração de texto como a mineração de dados aplicado a textos,
+a linguística computacional como a modelagem (estatística ou orientada a regras)
+de linguagem natural,
+e o PLN como a pesquisa e desenvolvimento aplicados à interação entre computadores
+e a linguaagem humana.
+
+Outros termos e áreas importantes para o trabalho proposto são:
+interação humano-computador,
+percepção, cognição, estímulo,
+representação,
+representação de dados (de uma, duas, três ou mais dimensões),
+visualização (de dados, de informação, científica),
+raciocínio analítico (\emph{analytical reasoning}),
+reconhecimento de padrões,
+aprendizado de máquina,
+design,
+design de interação,
+design de interfaces,
+cores, formas, glifos,
+analítica visual (\emph{visual analytics}),
+análise de tipos específicos de dados (áudio, imagem, estruturas sociais, dados sintéticos).
+
+Talvez a conceitualização mais útil nesta pesquisa,
+que transcende o propósito de expor inconsistências ou a busca
+vocabulários e definições concisos,
+é o estudo da classificação.
+Nas humanas, há tradição no estudo de \emph{tipologias},
+que são classificações em geral não bem definidas quantitativamente
+e mais preocupadas em qualificar os diferentes tipos ou classes.
+Já as \emph{taxonomias} são em geral reconhecidas como de grande tradição
+na biologia, e possuem ênfase na nomenclatura com base em características
+bem definidas.
+A definição de classificação, taxonomia e tipologia não é uniforme na literatura
+científica (e.g. árvore taxonômica na linguística se refere ao relacionamento
+dos hiperônimos aos hipônimos e não se referem à biologia)
+e há outros termos referentes à classificações: vocabulários, ontologias,
+tesaurus, etc.
+Ainda assim, a consideração da literatura sobre classificação em
+diferentes áreas do conhecimento poderá ajudar-nos a uma melhor
+organização do conhecimento e a contemplar as necessidades de pesquisadores
+com formações diversas.
+
 \subsection{Sua importância}
 Há uma proliferação de redes sociais virtuais que produzem muitos dados
 e as estruturas relacionadas estão ainda sendo caracterizadas.
@@ -162,6 +244,8 @@ São esperados resultados em três frentes:
     \item Avanços em analítica visual de redes sociais principalmente através da consideração das características topológicas e textuais para a interface.
     \item Um software aberto para analítica visual de redes sociais que seja capaz de lidar com grandes volumes de dados e seja executado em navegadores web.
     \item Um arcabouço de analítica visual que permita comparar redes sociais com outras redes reais (especialmente livres de escala) e com textos diversos (e.g. literatura científica, James Joyce, Shakespeare, Bíblia). 
+    \item Um arcabouço de analítica visual que facilite estudos classificatórios (tipológicos, taxonômicos) em redes sociais
+    de forma a permitir a observação de tipos/classes de redes e de participantes por pesquisadores e.g. de ciências e psicologia sociais. 
 \end{itemize}
 
 \subsection{Disseminação dos resultados}\label{diss1}
@@ -244,6 +328,31 @@ propomos:
     Concebemos toda a implementação em código aberto/software livre para facilitar a colaboração
     no desenvolvimento e permitir que as rotinas sejam publicamente escrutinizadas.
 \end{itemize}
+
+\subsection{Adequação do candidato à proposta}
+O candidato a esta pesquisa possui uma formação altamente multidisciplinar,
+o que deverá contribuir para o bom andamento do trabalho.
+Expandindo o argumento:
+\begin{itemize}
+	\item a pesquisa envolve muitas áreas de conhecimento, de questões ligadas ao audiovisual e percepção,
+	a análise de texto e redes e engenharia de software, como exposto na Seção~\ref{term}.
+	\item O candidato desenvolveu trabalhos nas áreas envolvidas:
+	é graduado em artes (composição musical); realizou mestrado e doutorado na física computacional
+	com contribuições científicas de nítido cruzamento entre física,
+	estatísica, mineração de texto, redes complexas, ontologias e dados ligados,
+	programação, e artes~\cite{msc,tese,stab,diffT,vers,losd,wavelets,sintGran,KS}.
+	Além disso, realizou diversas atividades de cunho prático, como composição musical,
+	apresentações artíticas, programação de software original e contribuição para diversos software livres
+	bastante utilizados no mundo todo, e uma consultoria em parceria com a ONU e a Presidência da República~\cite{lattes,tese,msc}.
+\end{itemize}
+
+Em resumo, o candidato está acostumado a lidar com as diferentes linguagens e a grande quantidade de literatura
+envolvida em um trabalho como este.
+Adicionalmente, possui algum conhecimento e maturidade com relação às áreas,
+como evidenciado pelo método de visualização de redes em evolução que desenvolveu~\cite{versinus},
+pela mineração de dados realizada no seu doutorado~\cite{tese},
+a modelagem psicofísica apresentada em seu mestrado~\cite{msc,massa},
+e as implementações computacional que permeiam praticamente toda a sua produção.
 
 \section{Cronograma}
 24 meses.
