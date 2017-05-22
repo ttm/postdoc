@@ -19,13 +19,27 @@ Universidade de São Paulo (ICMC-USP)}
 
 \noindent
 \textbf{Resumo:}
+Este projeto propõe o desenvolvimento de métodos e software de analítica visual (\emph{visual analytics})
+para a análise de redes sociais (ARS).
+As contribuições visam permitir a utilização de interfaces visuais interativas por pesquisadores de diversas áreas
+para a classificação/tipologização de redes sociais e participantes em dados relacionados a redes sociais virtuais.
+Uma caracterização destes sistemas, por critérios topológicos e textuais,
+assim como visualizações preliminares, e o levantamento de uma base de dados em protocolo conveniente (dados ligados),
+foi realizada pelo proponente em seu trabalho de doutorado.
+Além disso, o proponente possui uma formação multidisciplinar e experiência em programação web
+e multimídia, o que deverá favorecer o bom andamento da pesquisa.
+A supervisora deste projeto possui ampla experiência em visualização de dados
+e tem investido em analítica visual e análise de redes sociais.
+Todo o trabalho aqui proposto deverá ser conduzido de forma aberta,
+todo o código desenvolvido publicamente em repositórios Git,
+e acompanhado de escrita de artigos e parcerias com pesquisadores de outras áreas.
 
-\noindent
+\noindent\\
 \textbf{Palavras-chave:} Visual analytics, Redes sociais, Redes complexas, Mineração de texto.
 
 
 
-\title{Analítica Visual (Visual Analytics) de Topologia e Texto em Redes Sociais}
+\title{Visual Analytics of text and topology in social networks}
 \author{\textbf{Proponent:} Renato Fabbri\\
 \textbf{Supervisor:} Prof.  Dr. Maria Cristina Ferreira de Oliveira\\
 Institute of Mathematics and Computational Sciences,\\
@@ -35,16 +49,30 @@ University of São Paulo (ICMC-USP)}
 \maketitle
 
 \noindent
-Abstract
+\textbf{Abstract:}
+This project proposes the development of visual analytics methods and software
+for the social networks analysis (SNA).
+The contributions aim to allow the use of interactive visual interfaces by researchers from different areas
+for the classification/typologization of social networks and participants in data related to virtual social networks.
+A characterization of these systems, by topological and textual criteria,
+as well as preliminary visualizations, and the collection of a database in linked data,
+was carried out by the proponent in his doctoral work.
+In addition, the proponent has multidisciplinary training and experience in web and audiovisual programming,
+which should favor the good progress of the research.
+The supervisor of this project has extensive experience in data visualization
+and has invested in visual analytics and social network analytics.
+All work proposed here should be openly conducted,
+all developed code publicized in Git repositories,
+and accompanied by scientific writing and partnerships with researchers from other areas.
 
-\noindent
+\noindent\\
 \textbf{Keywords:} Visual analytics, Social networks, Complex networks, Text mining.
 
 \newpage
 \section{Enunciado do problema}
 Este trabalho se propõe a desenvolver métodos e ferramentas
 para a Análise de Redes Sociais (ARS) via Analítica Visual (\emph{visual analytics}),
-orientados à mineração destas estruturas por especialistas de outras áreas (e.g. linguístas, físicos, cientistas sociais, psicólogos) e
+orientados à mineração destas estruturas por especialistas de outras áreas (e.g. linguistas, físicos, cientistas sociais, psicólogos) e
 considerando as propriedades das estruturas sociais.
 Exemplos destas propriedades podem ser divididos em três grupos:
 \begin{itemize}
@@ -68,11 +96,12 @@ Entendemos que esta divisão é útil para o trabalho:
 \begin{itemize}
 	\item Analítica Visual (\emph{visual analytics}):
 	compreendida aqui como a mineração de dados através de visualização de dados em interfaces interativas.
+	Uma definição mais usual é: ``a ciência do raciocínio analítico facilitado por interfaces visuais interativas''.
    	A Figura~\ref{fig:md} explicita a relação entre mineração de dados e a analítica visual.
 	Embora a área seja recente, existem já algumas formas consagradas pela literatura como apropriadas
 	para abordar a tarefa de analítica visual.
 	Por exemplo, há o lema/mantra de Shneiderman ``Visão geral primeiro, zoom e filtragem, detalhes sob demanda''~\cite{shn},
-	e uma versão extendida dele ``Analise primeiro, mostre o importante, zoom e filtragem, analise mais, detalhes sob demanda''~\cite{keim2006}.
+	e uma versão estendida dele ``Analise primeiro, mostre o importante, zoom e filtragem, analise mais, detalhes sob demanda''~\cite{keim2006}.
 	\item Análise de Redes Sociais (ARS):
 	concebida nesta proposta a partir das áreas de redes complexas e mineração de texto.
 \end{itemize}
@@ -85,7 +114,7 @@ As questões principais são: 1) na analítica visual há a inserção do usuário em v
 a partir dos dados;
 2) na analítica visual há a utilização da visualização de dados pelo usuário para a mineração.
 Como pode-se inferir, a analítica visual implica na utilização de interfaces visuais interativas
-para representação dos dados que possam ser adaptadas contínuamente no processo de obtenção e evidenciação de hipóteses.}
+para representação dos dados que possam ser adaptadas continuamente no processo de obtenção e evidenciação de hipóteses.}
 \label{fig:md}
 \begin{flushleft}\footnotesize
 Fonte: Eduard Gröller~\cite{vis1}.\
@@ -126,7 +155,7 @@ a mineração de texto como a mineração de dados aplicado a textos,
 a linguística computacional como a modelagem (estatística ou orientada a regras)
 de linguagem natural,
 e o PLN como a pesquisa e desenvolvimento aplicados à interação entre computadores
-e a linguaagem humana.
+e a linguagem humana.
 
 Outros termos e áreas importantes para o trabalho proposto são:
 interação humano-computador,
@@ -158,7 +187,7 @@ A definição de classificação, taxonomia e tipologia não é uniforme na literatura
 científica (e.g. árvore taxonômica na linguística se refere ao relacionamento
 dos hiperônimos aos hipônimos e não se referem à biologia)
 e há outros termos referentes à classificações: vocabulários, ontologias,
-tesaurus, etc.
+tesauros, etc.
 Ainda assim, a consideração da literatura sobre classificação em
 diferentes áreas do conhecimento poderá ajudar-nos a uma melhor
 organização do conhecimento e a contemplar as necessidades de pesquisadores
@@ -167,7 +196,7 @@ com formações diversas.
 \subsection{Sua importância}
 Há uma proliferação de redes sociais virtuais que produzem muitos dados
 e as estruturas relacionadas estão ainda sendo caracterizadas.
-Uma ferramenta de analítica visual em cógido aberto, portável para sistemas operacionais diferentes,
+Uma ferramenta de analítica visual em código aberto, portável para sistemas operacionais diferentes,
 e que seja capaz de lidar com grandes quantidades de dados
 é certamente algo desejável.
 As análises a serem possibilitadas pela ferramenta,
@@ -234,8 +263,8 @@ kiki-bouba, design e estética~\cite{kiki,design,gestalt,estetica}.
 \includegraphics[scale=.25]{figs/versinus_}
 \caption{Um quadro do método de visualização de visualização de redes em evolução via animações
 (chamado Versinus)).
-Os vértices mais conectados (hubs) estão na metade do período da senóide à esquerda.
-Os vértices intermediários estão na segunda metade d senóide,
+Os vértices mais conectados (hubs) estão na metade do período da senoide à esquerda.
+Os vértices intermediários estão na segunda metade d senoide,
 enquanto os periféricos estão na linha reta do lado direito e superior.
 Os pontos brancos na parte de baixo da imagem mantém uma 
 Os pontos brancos na parte inferior, com números, mantêm o controle da posição do vértice na ordenação global.
@@ -296,7 +325,7 @@ São esperados resultados em três frentes:
 O software aberto pretendido deve facilitar a interação com usuários, desenvolvedores e pesquisadores.
 Visamos que o software seja utilizado por pesquisadores de áreas diversas como linguística, física e ciências sociais.
 Os resultados devem ser apresentados em conferências e em artigos de revistas, principalmente internacionais.
-A circulação de material didático em video potencialmente aumentará a recepção das contribuições.
+A circulação de material didático em vídeo potencialmente aumentará a recepção das contribuições.
 As análises e interfaces devem ser devolvidas às comunidades virtuais que geraram os dados.
 
 \section{Desafios científicos e tecnológicos}
@@ -372,15 +401,15 @@ propomos:
     proponente~\cite{tese,losd}.
     A base de dados resultante (já obtido) preferencialmente deve ser abrigado em alguma instancia publicamente acessível
     e pode ser expandida no decorrer da pesquisa proposta neste projeto.
-    Uma possibilidade gratuíta é utilizar os serviços do Data-World~\cite{dw} pois abrigam dados ligados,
+    Uma possibilidade gratuita é utilizar os serviços do Data-World~\cite{dw} pois abrigam dados ligados,
     mesmo na grande quantidade que temos, e permitem consultas via SparQL.
     \item Entendemos que o ideal é que o software possa ser executado em navegadores web usuais (e.g. Google Chrome e Firefox).
     Para isso, contamos com boas bibliotecas de visualização.
-    A principal é a D3.js, que pode ser integrada com WebGL para possiblitar visualizações mais complexas.
+    A principal é a D3.js, que pode ser integrada com WebGL para possibilitar visualizações mais complexas.
     Boas alternativas são o Three.js e o ccNetViz, que já são integrados com WebGL.
     Já no processamento dos dados, podemos aproveitar o bom repertório de bibliotecas em Python,
     que utiliza as rotinas em BLAS e LAPACK para processamento matricial e vetorial.
-    Devemos estudar as possiblidades de implementar o processamento dos dados diretamente
+    Devemos estudar as possibilidades de implementar o processamento dos dados diretamente
     em JavaScript para que a arquitetura do software fique simplificada,
     mas isso não é central, dado que a integração de JavaScript com Python é imediata
     caso sejam utilizados frameworks em Python para desenvolvimento web como Flask e Django.
@@ -388,11 +417,11 @@ propomos:
     serão executadas pelo servidor ao passo que, se implementadas em JavaScript, poderão ser executadas no cliente
     (caso seja feita uma implementação em Node.js, o processamento em JavaScript poderá ser feito no servidor).
     Concebemos toda a implementação em código aberto/software livre para facilitar a colaboração
-    no desenvolvimento e permitir que as rotinas sejam publicamente escrutinizadas.
+    no desenvolvimento e permitir que as rotinas sejam publicamente escrutináveis.
 \end{itemize}
 
 \subsection{Adequação do candidato à proposta}
-O candidato a esta pesquisa possui uma formação altamente multidisciplinar,
+O candidato a esta pesquisa possui uma formação multidisciplinar,
 o que deverá contribuir para o bom andamento do trabalho.
 Expandindo o argumento:
 \begin{itemize}
@@ -401,10 +430,10 @@ Expandindo o argumento:
 	\item O candidato desenvolveu trabalhos nas áreas envolvidas:
 	é graduado em artes (composição musical); realizou mestrado e doutorado na física computacional
 	com contribuições científicas de nítido cruzamento entre física,
-	estatísica, mineração de texto, redes complexas, ontologias e dados ligados,
+	estatística, mineração de texto, redes complexas, ontologias e dados ligados,
 	programação, e artes~\cite{msc,tese,stab,diff,versinus,losd,wavelets,sintGran,KS}.
 	Além disso, realizou diversas atividades de cunho prático, como composição musical,
-	apresentações artíticas, programação de software original e contribuição para diversos software livres
+	apresentações artísticas, programação de software original e contribuição para diversos software livres
 	bastante utilizados no mundo todo, e uma consultoria em parceria com a ONU e a Presidência da República~\cite{lattes,tese,msc}.
 \end{itemize}
 
@@ -454,7 +483,7 @@ Este projeto foi dividido nas seguintes etapas, para as quais foi feita a tabela
 
 \section{Disseminação e avaliação}
 Como exposto na Seção~\ref{diss1}, haverá disseminação das contribuições em conferências,
-revistas, video e através do software em código aberto.
+revistas, vídeo e através do software em código aberto.
 O desenvolvimento deverá estar publicamente acessível desde o começo,
 muito provavelmente em repositório Git na plataforma Github.
 A avaliação deverá ser feita em três frentes: pela nossa própria capacidade de mineração
@@ -464,9 +493,25 @@ através da submissão das contribuições de analítica visual para revistas,
 de forma a obter avaliações de revisores especialistas.
 
 \section{Outros apoios}
-Projeto FAPESP, infraestrutura do ICMC/USP, grupo VICG, GSoC.
-NEXOS e labMacambira.sf.net para usuários
-e para realizar experimentos de interação nas próprias redes sociais.
+Para a realização deste projeto, contamos com apoio institucional
+e infraestrutura do Instituto de Ciências Matemáticas e de Computação (ICMC/USP)
+e do grupo \emph{Visualization, Imaging and Computer Graphics} (VICG/ICMC/USP).
+Há um Projeto de Pesquisa Regular em análise pela FAPESP
+(título: ``Visual analytics: aplicações e uma
+investigação conceitual'').
+O proponente deste projeto foi aprovado para uma parceria com a
+Universidade de Nebraska-Lincoln e o Google no âmbito do programa
+\emph{Google Summer of Code} (GSoC 2017).
+A duração desta parceria é curta, de apenas 3 meses,
+e já está em andamento, e foi compreendida pelo candidato
+como uma oportunidade de iniciar o trabalho em analítica visual:
+sua responsabilidade nesta parceria é implementar layouts para visualização de redes
+no ccNetViz, uma biblioteca para visualização de redes em navegadores HTML utilizando WebGL.
+Para utilização dos desenvolvimentos propostos neste projeto,
+contamos com os demais membros da rede Nexos de pesquisa~\cite{nexos} (grupo de pesquisa cadastrado no CNPq)
+e com membros do grupo labMacambira.sourceforge.net,
+dentre os quais estão vários acadêmicos e outros interessados em pesquisas sobre audiovisual,
+estruturas sociais e desenvolvimento de software livre.
 
 \bibliography{references}
 \end{document}
