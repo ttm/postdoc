@@ -1,10 +1,20 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage{titling}
 \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{geometry}
+\pagenumbering{gobble}
+\geometry{
+	a4paper,
+        left=35mm,
+        top=15mm,
+}
+% \linespread{1.25}
 % \hypersetup{linkbordercolor=blue}
 \hypersetup{colorlinks=true,
 linkcolor=[rgb]{0.2,0.5,0.2},
@@ -74,39 +84,43 @@ and accompanied by scientific writing and partnerships with researchers from oth
 \textbf{Keywords:} Visual analytics, Social networks, Complex networks, Text mining.
 
 \newpage
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \section{Enunciado do problema}
 Este trabalho se propõe a desenvolver métodos e ferramentas
 para a Análise de Redes Sociais (ARS) via Analítica Visual (\emph{visual analytics}),
-orientados à mineração por especialistas de outras áreas (e.g. linguistas, físicos, cientistas sociais, psicólogos) e
-considerando as propriedades das estruturas sociais.
-Exemplos destas propriedades podem ser divididos em três grupos:
+orientados a especialistas de outras áreas (e.g. linguistas, físicos, cientistas sociais, psicólogos) e
+considerando as propriedades das estruturas sociais em análise.
+Estas propriedades podem ser divididos em três grupos:
 \begin{itemize}
     \item Topológicos: as redes sociais são reportadas como livres de escala, de pequeno mundo e com comunidades~\cite{newman}.
     \item Textuais: a linguagem nas redes sociais é muitas vezes informal, com abreviações e erros com relação às normas oficiais~\cite{miningSocial}.
     \item Relacionamento entre topologia e texto: há aspectos do texto produzido pelos participantes que se relacionam à topologia.
-    Por exemplo, hubs utilizam frases mais curtas e mais verbos e advérbios, periféricos utilizam mais substantivos~\cite{tese}.
+	    Por exemplo, \emph{hubs} utilizam frases mais curtas e mais verbos e advérbios, participantes periféricos utilizam mais substantivos~\cite{tese}.
 \end{itemize}
 
 Em resumo, nossa proposta de desenvolver métodos e uma ferramenta de analítica visual para redes sociais
 envolve a integração dos dados a serem analisados,
 o processamento dos dados para obtenção de estruturas relevantes,
-da concepção de visualizações e formas de interação com elas,
-e da escrita de software que permita aos pesquisadores de outras áreas
-usufruir destas rotinas através de uma interface unificada.
+a concepção de visualizações e mecanismos de interação com elas,
+e a escrita de software que permita aos pesquisadores de outras áreas
+usufruir destas rotinas por meio de uma interface unificada.
 
 \subsection{Conceitualização, terminologia, polissemia e sinônimos}\label{term}
 A pesquisa proposta neste documento envolve várias áreas do conhecimento.
 O conhecimento pode ser sistematizado de diversas formas.
-Entendemos que esta divisão é útil para o trabalho:
+Entendemos que a divisão a seguir é útil para o trabalho:
 \begin{itemize}
 	\item Analítica Visual (\emph{visual analytics}):
-	compreendida aqui como a mineração de dados através da visualização de dados em interfaces interativas.
-	Uma definição mais usual é: ``a ciência do raciocínio analítico facilitado por interfaces visuais interativas''.
+	compreendida aqui como a mineração de dados apoiada por visualização de dados em interfaces interativas.
+	Uma definição mais usual é: ``a combinação de técnicas automáticas de análise com visualizações interativas
+		para a compreensão e tomada de decisão em bases de dados grandes e complexas''~\cite{visa2}.
    	A Figura~\ref{fig:md} explicita a relação entre mineração de dados e a analítica visual.
-	Embora a área seja recente, existem já algumas formas consagradas pela literatura
+	Embora a área seja relativamente recente, já existem algumas diretrizes consagradas pela literatura
 	para abordar a analítica visual.
 	Por exemplo, há o lema/mantra de Shneiderman ``Visão geral primeiro, zoom e filtragem, detalhes sob demanda''~\cite{shn},
-	e uma versão estendida dele ``Analise primeiro, mostre o importante, zoom e filtragem, analise mais, detalhes sob demanda''~\cite{keim2006}.
+	e uma versão estendida dele ``Analise primeiro, mostre o importante, zoom e filtragem, analise mais, apresente detalhes sob demanda''~\cite{keim2006}.
 	\item Análise de Redes Sociais (ARS):
 	concebida nesta proposta a partir das áreas de redes complexas e mineração de texto.
 \end{itemize}
@@ -128,10 +142,9 @@ Fonte: Eduard Gröller~\cite{vis1}.\
 \end{figure}
 
 Salta evidente que as duas áreas são multidisciplinares.
-As áreas diretamente relacionadas pela nossa descrição são também
-multidisciplinares: mineração de dados, visualização de dados, interfaces interativas,
+As demais áreas diretamente relacionadas pela nossa descrição são também
+multidisciplinares e também recentes: mineração de dados, visualização de dados, interfaces interativas,
 redes complexas, mineração de texto.
-Além disso, as áreas são recentes.
 As redes complexas surgiram como área de investigação reconhecida no
 final da década de 90~\cite{newman};
 os primeiros workshops de mineração de texto ocorreram em 1999~\cite{mtH};
@@ -140,8 +153,8 @@ Ainda não citado, mas importante para a forma como abordamos alguns dos
 desafios da pesquisa proposta,
 o termo ``dados ligados'' foi cunhado em 2006~\cite{ldH}.
 Como resultado, o vocabulário não é sempre bem definido,
-há palavras diversas que se referem aos mesmos conceitos
-e conceitos diferentes relacionados a uma mesma palavra.
+há termos diversas que se referem aos mesmos conceitos
+e conceitos diferentes relacionados a um mesmo termo.
 
 Uma apresentação detalhada da terminologia, incluindo escolhas consistentes
 de termos e os diferentes problemas nas terminologias encontradas,
@@ -155,7 +168,8 @@ e rede em geral se refira a grafos encontrados em sistemas reais/empíricos/natur
 ou ao sistema representado como grafo.
 Outro bom exemplo é a usual indistinção entre mineração de texto,
 linguística computacional e processamento de linguagem natural (PLN).
-Uma distinção coerente entre as áreas pode ser feita considerando
+Uma distinção coerente entre as áreas, não encontrada na literatura por nós,
+pode ser estabelecida considerando
 a mineração de texto como a mineração de dados aplicada a textos,
 a linguística computacional como a modelagem (estatística ou orientada a regras)
 de linguagem natural,
@@ -182,7 +196,7 @@ Talvez a conceitualização mais útil para esta pesquisa,
 que transcende o propósito de expor inconsistências ou a busca
 vocabulários e definições concisos,
 é o estudo da classificação.
-Nas humanas, há tradição no estudo de \emph{tipologias},
+Nas ciências humanas, há tradição no estudo de \emph{tipologias},
 que são classificações em geral não bem definidas quantitativamente
 e mais preocupadas em qualificar os diferentes tipos ou classes.
 Já as \emph{taxonomias} são em geral reconhecidas como de grande tradição
@@ -203,7 +217,7 @@ Há uma proliferação de redes sociais virtuais que produzem muitos dados
 e estas estruturas estão ainda sendo caracterizadas.
 Uma ferramenta de analítica visual em código aberto,
 utilizável em sistemas operacionais diferentes,
-e que seja capaz de lidar com grandes quantidades de dados
+e que seja capaz de processar grandes quantidades de dados
 é certamente algo desejável.
 As análises a serem possibilitadas pela ferramenta,
 e necessárias para a concepção da mesma,
@@ -216,19 +230,19 @@ a partir das áreas de redes complexas e de mineração de texto.
 O trabalho aqui proposto visa aplicar os mesmos métodos 
 a um conjunto maior de redes virtuais para melhor delimitar
 a validade da caracterização e para aprofundar as análises.
-Este conhecimento sobre as estruturas analisadas possuem um potencial
-para classificações e tipologias nas redes e nos participantes.
+Este conhecimento sobre as estruturas analisadas possui um potencial
+para fundamentar classificações e tipologias nas redes e nos participantes.
 Além da relevância evidente das redes sociais virtuais,
 há interesse neste estudo de tipos (de redes e de participantes)
 de nossa parte, da parte da Rede Nexos de Pesquisa Interdisciplinar~\cite{nexos}
-(do qual o proponente faz parte há anos)
-e da tradição de exatas em geral, que tem grande ênfase na tarefa de classificação.
+(do qual o proponente é membro há anos)
+e da tradição de exatas em geral, que coloca grande ênfase na tarefa de classificação.
 
 Melhor relacionando ARS com redes complexas e mineração de texto,
 podemos esperar que haja contribuições na análise de literatura
 e de redes livres de escala.
 Este aspecto não é central para a proposta aqui apresentada,
-mas ainda relevante pois,
+mas ainda assim é relevante pois,
 para melhor permitir o estudo das redes sociais,
 é útil que haja outras redes e textos para comparação,
 o que permitirá a ARS em relação a estas estruturas externas
@@ -255,10 +269,11 @@ statistical analysis, visualization and linked data''} apresenta contribuições
 para a caracterização dos sistemas sociais virtuais, algumas destas em processo de publicação~\cite{ops,diff,losd}
 e uma já aceita pela revista Physica A~\cite{stab}.
 O proponente deste projeto de pós-doutoramento concebeu e implementou
-um método de visualização de redes em evolução~\cite{tese,versinus},
-evidenciado na Figura~\ref{fig:ver}.
-Há trabalhos do grupo de pesquisa \emph{Visualization, Imaging and Computer Graphics} (VICG/ICMC/USP) em visualização de dados e de redes~\cite{art1,art2,art3}.
-Os trabalhos~\cite{vd1,vd2} são base para visualização de dados,
+uma técnica de visualização de redes em evolução~\cite{tese,versinus},
+ilustrado na Figura~\ref{fig:ver}.
+Há trabalhos do grupo de pesquisa \emph{Visualization, Imaging and Computer Graphics} (VICG/ICMC/USP)
+em visualização de dados textuais e de redes~\cite{cr1,cr2,cr3,cr4,cr5}.
+Os textos~\cite{vd1,vd2} são base para visualização de dados,
 enquanto~\cite{Viz1,Viz2,Viz3} são especificamente para visualização de redes/grafos
 e~\cite{text1,text2} são sobre mineração de texto.
 Os trabalhos~\cite{visa,visa2} são bastante relevantes para a analítica visual.
@@ -272,11 +287,11 @@ kiki-bouba, design e estética~\cite{kiki,design,gestalt,estetica}.
 \includegraphics[scale=.25]{figs/versinus_}
 \caption{Um quadro do método de visualização de redes em evolução via animações
 	(chamado Versinus~\cite{versinus}).
-Os vértices mais conectados (hubs) estão na metade do período da senoide à esquerda.
-Os vértices intermediários estão na segunda metade da senoide,
+Os vértices mais conectados (hubs) são posicionados na metade do período da senoide à esquerda.
+Os vértices intermediários são posicionados na segunda metade da senoide,
 enquanto os periféricos estão na linha reta superior.
-Os pontos brancos na parte inferior, com números, mantêm a posição do vértice na ordenação global.
-Valores de medições piscam periodicamente perto dos vértices com os quais elas estão relacionadas.
+Os pontos brancos na parte inferior, com numeração, mantêm a posição do vértice na ordenação global.
+Valores de medições piscam periodicamente perto dos vértices aos quais elas estão relacionadas.
 }
 \label{fig:ver}
 \begin{flushleft}\footnotesize
@@ -289,7 +304,7 @@ Fonte: figura feita pelo proponente.\
 A Profa. Dra. Maria Cristina Ferreira de Oliveira,
 supervisora desta proposta, 
 está pesquisando analítica visual para redes sociais e possui um aluno de mestrado no tema.
-Ela enviou recentemente uma proposta de projeto temático para a FAPESP.
+Ela enviou recentemente uma proposta de projeto de pesquisa à FAPESP (Processo 2017/05838-3).
 Segue o resumo.
 
 ``A pesquisa em Visual Analytics é central no tratamento dos desafios associados à
@@ -316,8 +331,15 @@ Ou seja, há um interesse do grupo VICG (\emph{Visualization, Imaging and Compute
 na ARS através da analítica visual que é anterior à concepção desta proposta de pós-doutoramento.
 De forma bastante conveniente, o trabalho de doutoramento do candidato
 fornece um arcabouço de análise, dados já representados como dados ligados e visualizações iniciais,
-o que permite que esta proposta de pós-doutoramento, e a pesquisa em andamento no VICG,
-sejam realizadas com maior facilidade.
+o que favorece a sinergia entre esta proposta de pós-doutoramento, e a pesquisa em andamento no VICG.
+
+\subsubsection{Painel de Gestão Acadêmica a partir do ScriptLattes}
+Dada a sobreposição de técnicas entre o projeto aqui proposto e as utilizadas
+no ``Painel de Gestão Acadêmica'', promovido pelo Centro de Competência em Software Livre (CCSL-ICMC/USP),
+a partir do ScriptLattes~\cite{sLattes}, consideramos colaborar
+com esta frente de pesquisa e desenvolvimento.
+Esta possibilidade é reforçada pelo fato de que se dedicam ao painel um número de pesquisadores do ICMC/USP,
+instituição na qual a supervisora desta proposta de pós-doutoramento é professora titular.
 
 \section{Resultados esperados}
 São esperados os resultados:
@@ -361,9 +383,9 @@ Os desafios imediatos para esta tarefa são:
     e resultarem em figuras esteticamente atraentes, mas a observação de outras características ficam prejudicadas,
     um fenômeno que tem recebido o nome de \emph{hairball effect}.
     Para a visualização de dados multidimensionais, as técnicas podem não ser apropriadas para dados com dimensionalidade muito alta
-    ou não resultarem em coordenadas com fácil interpretação, como no caso do LSP.
-    Além disso, o uso de cores, formas e glifos possuem um alto impacto na capacidade de análise pelo usuário
-    e possuem muitas teorizações envolvidas e são substancialmente modificadas de acordo e.g. com o monitor do usuário,
+		ou as não resultarem em coordenadas com fácil interpretação, como no caso de algumas projeções multidimensionais(e.g. LSP).
+    Além disso, a escolha de cores, formas e glifos possui um alto impacto na capacidade de análise pelo usuário
+    e possui muitas teorizações envolvidas e são substancialmente modificadas de acordo e.g. com o monitor do usuário,
     o que dificulta o controle na implementação.
     Para exemplificar este aspecto desafiador do trabalho proposto,
     na Figura~\ref{fig:gv} está uma sistematização bastante resumida de parte das questões envolvidas
@@ -376,7 +398,7 @@ Os desafios imediatos para esta tarefa são:
 \end{itemize}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=.65,trim={0 0 0 2cm},clip]{figs/Map_}
+\includegraphics[scale=.65]{figs/netViz}
 \caption{Resumo de opções relacionadas à visualização de grafos.
 Uma visualização de grafo em evolução pode ser feita por imagens ou animação,
 pode ser feita em tempo real ou diferido, pode envolver empacotamento de vértices ou arestas,
@@ -440,7 +462,7 @@ Aliado a isso, a interface deve ser capaz de guardar anotações relacionadas
 
 \subsection{Adequação do candidato à proposta}
 O candidato a esta pesquisa possui formação multidisciplinar,
-o que deverá contribuir para o bom andamento do trabalho.
+o que deverá contribuir para enriquecer o escopo do projeto.
 Expandindo o argumento:
 \begin{itemize}
 	\item a pesquisa envolve muitas áreas de conhecimento, de questões ligadas ao audiovisual e percepção,
@@ -455,7 +477,7 @@ Expandindo o argumento:
 	bastante utilizados no mundo todo, e uma consultoria em parceria com a ONU e a Presidência da República~\cite{lattes,tese,msc}.
 \end{itemize}
 
-Em resumo, o candidato está acostumado a lidar com as diferentes linguagens e a grande quantidade de literatura
+Em resumo, o candidato está habituado a lidar com as diferentes linguagens e a grande quantidade de literatura
 envolvida em um trabalho como este.
 Adicionalmente, possui algum conhecimento e maturidade com relação às áreas,
 como evidenciado pelo método de visualização de redes em evolução que desenvolveu~\cite{versinus},
@@ -464,7 +486,7 @@ a modelagem psicofísica apresentada em seu mestrado~\cite{msc,massa},
 e as implementações computacionais que permeiam praticamente toda a sua produção.
 
 \section{Cronograma}
-Este projeto foi dividido nas seguintes etapas, para as quais foi feita a Tabela~\ref{tab:cron}.
+Este projeto foi dividido nas seguintes etapas, cujo cronograma de execução é apresentado na Tabela~\ref{tab:cron}.
 
 \begin{enumerate}
 	\item Revisão da literatura referente à analítica visual.
@@ -534,6 +556,12 @@ contamos com os demais membros da rede Nexos de pesquisa~\cite{nexos} (grupo de 
 e com membros do grupo labMacambira.sourceforge.net,
 dentre os quais estão vários acadêmicos e outros interessados em pesquisas sobre audiovisual,
 estruturas sociais e desenvolvimento de software livre.
-
+Outras possibilidades de apoio para este projeto incluem:
+\begin{itemize}
+	\item parceria com o Centro de Competência em Software Livre (CCSL/USP) no âmbito do projeto ``Painel de Gestão Acadêmica''
+		(desenvolvido no ICMC/USP),
+		que possui recursos de visualização de redes de colaboração e de genealogia acadêmica a partir do Lattes.
+	\item Perspectivas de colaboração em HCI com Stephen Payne (Universidade de Bath, Inglaterra) e em analítica visual de texto e de rede com Evangelos E. Milios (Universidade de Dalhousie, Canadá).
+\end{itemize}
 \bibliography{references}
 \end{document}
