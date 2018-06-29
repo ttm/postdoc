@@ -3,6 +3,21 @@
 \usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
 \usepackage{fullpage} % changes the margin
 \usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref} 	%% Use to fix Figure or Table: ex: \begin{table}[H]
+\hypersetup{
+	%pagebackref=true,
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	allbordercolors=black,
+	bookmarksdepth=4
+}
 
 \begin{document}
 %Header-Make sure you update this information!!!!
@@ -12,42 +27,80 @@ coordenadora: \textbf{Profa. Maria Cristina Ferreira de Oliveira} \\
 bolsista: \textbf{Renato Fabbri} \\
 Relatório I, bolsa TT5 \\
 
-\section*{Informação sobre o nível e período de usufruto da Bolsa}
+\section{Informação sobre o nível e período de usufruto da Bolsa}
 A bolsa é TT5 (Treinamento Técnico nível 5).
 O período é de 01/Set/2017 até hoje, dia 30/Jun/2018,
 prazo final para entrega deste primeiro relatório.
 
 % 
-\section*{Descrição das atividades do bolsista no projeto de pesquisa}
+\section{Descrição das atividades do bolsista no projeto de pesquisa}
 Neste período, pude aprofundar meus conhecimentos sobre visualização de dados
-(em especial sobre \emph{analítica audiovisual}),
-compatibilizando meus conhecimentos e fluências já antes adquiridas,
+(em especial sobre \emph{analítica visual}),
+compatibilizando meus conhecimentos e fluências antes adquiridas,
 e adiantar os objetivos descritos no projeto inicial desta bolsa TT5 e no
 projeto 2017/05838-3.
 Mais especificamente:
 \begin{itemize}
   \item Ajudei a ministrar, com a Profa. Cristina (coordenadora do projeto), as disciplinas SCC5836 e SCC0252, ambas a respeito de visualização de dados, na medida em que entendemos proveitoso para minha formação e andamento deste projeto.
-  Em especial, elaborei trabalhos para os alunos entregarem e os corrigi, apresentei uma aula sobre Redes Complexas (com foco em redes sociais), e apresentei uma introdução à mineração de dados, e apresentei visualizações e algoritmos para a aplicações fundamentadas de PCA (\emph(principal component analysis).
-  \item Dei dois seminários: um sobre as implementações que fiz de \emph{layouts} de redes para o ccNetViz (usa WebGL para a visualização de estruturas grandes de dados); outro sobre cores.
-  \item Publiquei 7 artigos no ENMC (Encontro Nacional de Modelagem Computacional), três deles foram selecionados para publicação na Revista CEREUS (já submetidos).
-  \item Disponibilizei no arXiv um artigo sobre o Vim e outro sobre Toki Pona, ambos tratando de realce de sintáxe (coloração de texto).
+  Em especial, elaborei trabalhos para os alunos entregarem e os corrigi, apresentei uma aula sobre Redes Complexas (com foco em redes sociais), e apresentei uma introdução à mineração de dados, e apresentei visualizações e algoritmos para a aplicações fundamentadas de PCA (\emph{principal component analysis}).
+  \item Ministrei dois seminários: um sobre as implementações que fiz de \emph{layouts} de redes para o ccNetViz (usa WebGL para a visualização de estruturas grandes de dados); outro sobre cores.
+  \item Publiquei 7 artigos no ENMC2017 (Encontro Nacional de Modelagem Computacional), três deles foram selecionados para publicação na Revista CEREUS (já submetidos).
+  \item Disponibilizei no arXiv um artigo sobre o Vim e outro sobre Toki Pona, ambos tratando de realce de sintaxe (coloração de texto).
   \item Apreciei os livros principais da área de visualização de dados e alguns outros sugeridos pela Profa. Cristina. Em especial, li e fichei partes do livro da Munzner e do Ware.
-  \item Desenvolvi ferramentas/plugins para Vim que auxiliam em nossas tarefas e estudos. Em especial, desenvolvi um plugin para lidar com cores (realce de sintáxe) e outro com bots (agentes conversacionais) desenvolvidos por mim mesmo. Este último como caminho para a computação cognitiva, fundamental para a analítica visual.
+  \item Desenvolvi ferramentas/plugins para Vim que auxiliam em nossas tarefas e estudos. Em especial, desenvolvi um plugin para lidar com cores (realce de sintáxe) e outro com bots (agentes conversacionais) desenvolvidos por mim mesmo. Este último para possibilitar a computação cognitiva, fundamental para a analítica visual.
   \item Concebemos, eu e a Profa. Cristina, o software a ser desenvolvido neste projeto. Desenvolvi até onde combinamos na última reunião (apenas uma janela com algumas \emph{widgets}). Tenho outros software desenvolvidos anteriormente que se encaixam nos moldes que concebemos.
-  \item Realizei um evento de iniciação em Python no IFSC/USP, com João Bueno (Olist) e Ýdà Nã-Dãn (mitóloga e artista).
-  \item Escrevi um artigo a convite da Revisa V!RUS (Nomads/IAU/USP), acompanhado de um acervo de imagens de redes (disponibilizado como comunidade do Facebook e via link para imagens com qualidade original).
+  \item Organizei um evento de iniciação em Python no IFSC/USP, com João Bueno (Olist) e Ýdà Nã-Dãn (mitóloga e artista), de 12h no total.
+  \item Escrevi um artigo a convite da Revisa V!RUS (Nomads/IAU/USP), acompanhado de um acervo de imagens de redes (disponibilizado como comunidade do Facebook e via link para imagens com a qualidade original).
   \item Concebemos alguns MOOCs (\emph{massive open online courses}), em especial um sobre ``pesquisa e desenvolvimento com tecnologias livres'', outro sobre ``música e áudio digital'', e um sobre ``visualização de dados'' (que prevemos calcar principalmente no livro da Munzner, notas de aulas, e artigos).
   \item Consideramos tanto a visualização quanto a sonificação de dados, o que nos levou ao conceito de ``Analítica Audiovisual''. Em especial, para isso, melhorei a referência principal que temos da descrição do áudio em termos de amostras LPCM (no arXiv).
+  \item Melhorei a escrita, terminologia e pseudocódigos de um artigo escrito pelo Alan Valejo (doutorando) e os Profs. Cristina e Alneu de Andrade Lopes, sobre estratégias multinível para otimização e visualização. Está em minhas mãos terminar uma revisão minuciosa do artigo, para então receber melhoras e a chancela dos professores para submeter a alguma revista internacional. Não consta aqui caminho para este trabalho através dos links pois os colaboradores não estão trabalhando em aberto.
 \end{itemize}
 
-\section*{Informar e justificar caso tenham ocorrido mudanças e, eventualmente, os ajustes realizados nas atividades de pesquisa do bolsista, em relação ao Plano de Atividades}
-\section*{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
-\section*{Juntar o histórico escolar atualizado do bolsista}
-\section*{Se for o caso, especificar}
-\subsection*{O cronograma da próxima etapa do trabalho do bolsista no projeto}
-\subsection*{Outras observações consideradas relevantes para a análise das atividades do bolsista por parte da FAPESP}
+\section{Informar e justificar caso tenham ocorrido mudanças e, eventualmente, os ajustes realizados nas atividades de pesquisa do bolsista, em relação ao Plano de Atividades}
+Demos bastante ênfase no meu aprofundamento na área e na compatibilização dos meus conhecimentos prévios com a área de Analítica Visual.
+Por eu ter já bastante experiência com programação, confiamos que esta frente será encaminhada de Julho em diante.
+Espero render mais, com mais foco (quase absoluto de agora em diante), nos objetivos descritos no projeto principal,
+no projeto da bolsa TT5, e dados pela Profa. Cristina.
 
-\section*{Apreciação do desempenho do bolsista}
+
+\section{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
+Apresentei ferramentas ao grupo de pesquisa, auxiliei na programação, escrita de artigos, em cursos regulares de visualização de dados,
+enriqueci o contexto de pesquisa com técnicas e conteúdos novos.
+Acredito estar auxiliando no andamento do projeto, em conformidade com a bolsa TT5.
+
+\section{Juntar o histórico escolar atualizado do bolsista}
+É o mesmo que o enviado ao início do projeto.
+Já possuo doutorado, cursei mais matérias que o necessário tanto no mestrado quanto no doutorado,
+consumo literatura científica e MOOCs regularmente, motivos pelos quais não consideramos a possibilidade
+de eu assistir mais aulas.
+
+\section{Se for o caso, especificar}
+\subsection{O cronograma da próxima etapa do trabalho do bolsista no projeto}
+Nos termos descritos acima, no projeto principal, e no projeto da bolsista TT5,
+e contando com a direção da Profa. Cristina, não há necessidade de descrever novo calendário.
+Apontamos nossa intenção de ministrar um curso sobre visualização de dados no semestre que vem.
+Também de dar os próximos passos com maior acompanhamento mútuo dos interesses,
+objetivos, conhecimentos, etc.
+
+\subsection{Outras observações consideradas relevantes para a análise das atividades do bolsista por parte da FAPESP}
+Pela limitação do tamanho deste relatório, prazo prorrogado já aprovado para o relatório da coordenadora,
+e orientação da FAPESP via telefone, este relatório descreve apenas brevemente os feitos e o bolsista
+auxiliará, na medida em que a coordenadora achar apropriado, a escrita do relatório do projeto principal
+(a ser entregue em Julho).
+
+\subsection{Links}
+\begin{itemize}
+  \item Artigos no arXiv: \url{https://arxiv.org/a/fabbri_r_1.html}
+  \item Repositórios de código: \url{https://github.com/ttm/}
+  \item Comunidade pública com direções para o artigo e galerias feitos a convite para a revista V!RUS: \url{https://www.facebook.com/groups/177946082897310/}
+  \item Ementa do MOOC de pesquisa e desenvolvimento com tecnologias livres: \url{https://docs.google.com/document/d/1tPY1OedvmLzdIga0uK7DSH6j2UDcXEmZxOL_Kz2K3VI/edit#heading=h.duaka341x0pj}
+  \item Ementa do MOOC de música e áudio computacionais: \url{https://docs.google.com/document/d/1O8y-W27P_ydeOXd97HBtLEeI0C0-IMhfq6AKWmqDW10/edit#heading=h.6jgd0ulugf3d}
+  \item relato sobre o evento de iniciação em Python: \url{https://www.facebook.com/renato.fabbri/posts/10156562315734430}
+\end{itemize}
+
+\section{Apreciação do desempenho do bolsista}
+
+Para ser escrito pela coordenadora.
 
 \end{document}
 % 
