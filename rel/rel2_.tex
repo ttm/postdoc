@@ -1,0 +1,214 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text.
+\usepackage{fullpage} % changes the margin
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref} 	%% Use to fix Figure or Table: ex: \begin{table}[H]
+\hypersetup{
+	%pagebackref=true,
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico},
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	allbordercolors=black,
+	bookmarksdepth=4
+}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{document}
+\noindent
+\normalsize
+ \textbf{Relatório 2, bolsa TT5, processo 2017/14778-4}\\
+Processo vinculado: \textbf{2017/05838-3} \\
+Coordenadora: \textbf{Dra. Maria Cristina Ferreira de Oliveira} \\
+Bolsista: \textbf{Dr. Renato Fabbri} \\
+
+\section{Informação sobre o nível e período de usufruto da Bolsa}
+A bolsa é TT5 (Treinamento Técnico nível 5).
+O período deste relatório é de 01/Jul/2018 até hoje, 06/Jun/2019.
+O prazo final para a entrega deste relatório seria 30/Jul/2019, mas apresento relatório antecipado em função do pedido de prorrogação
+da vigência do projeto ao qual a bolsa é vinculada.
+%Pretendemos submeter solicitação de prorrogação do período da bolsa por 2 meses, que pretendemos submenter, eu e a coordenadora, assim que possível.
+
+%\section{Descrição das atividades do bolsista no projeto de pesquisa}\label{desc}
+\section{Atividades realizadas e em andamento}\label{desc}
+Neste período, pude aplicar meus conhecimentos e proficiências nas atividades previstas no projeto desta bolsa TT5 e no projeto de pesquisa associado. As próximas seções detalham as atividades mais relevantes no período, algumas ainda em andamento.
+
+\subsection{Visualização interativa de redes bipartidas assistida por estratégias multinível}\label{sml}
+Desenvolvi, em conjunto com a coordenadora e o pesquisador Alan Valejo (doutorando no ICMC/USP) um método para visualização e navegação de redes bipartidas assistido por estratégias multinível~\cite{alan}.
+    Na sequência implementei o método em uma interface de visualização que tem se mostrado bastante eficiente, comportando inclusive que utilizemos mais recursos computacionais, pois não temos observados atrasos na interação com a visualização, mesmo manipulando grafos de larga escala.
+    A interface está ilustrada na Figura~\ref{ml}. % e mais informações estão dadas na legenda.
+    Apresentamos os resultados em um artigo que pretendemos submeter nos próximos dias à conferência internacional ``Graph Drawing and Network Visualization'', cujos anais são publicados no ``Lecture Notes in Conputer Science'' (LNCS).
+    A interface está acessível  publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown}.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{overall____}
+\caption{%
+  Interface do sistema de visualização de redes bipartidas utilizando a estratégia multinível.
+  Esta figura é ilustrativa de uma interface de visualização de dados, com elementos para a seleção inicial dos dados e parametrização do mapeamento visual, para a especificação de transformações no mapeamento visual ao longo da interação, e para alterar as propriedades da visualização resultante.
+  Os elementos superiores, botão no topo (1) e caixa cinza (2) permitem a parametrização dos dados de entrada do processo de mapeamento visual.
+  Ao acionar o botão (3), a rede é renderizada, utilizando o algoritmo de o \emph{layout} de rede selecionado em (4), aonde estão reunidos outros \emph{widgets} auxiliares para selecionar,
+  mostrar/esconder os links,
+  e para a interface exibir informação textual requisitada sob demanda
+  pelo usuário ou que pode ser útil para apoiar a navegação.
+  Em (5) tem-se uma tabela interativa com informações sobre as camadas e níveis
+  da rede bipartida e que pode ser usada para modificar a visualização da rede apresentada no \emph{canvas}.
+  Em (6) está a barra de ferramentas que habilita a navegação pela rede e
+  possibilita ajustes finos na visualização.
+  Em (7) está o \emph{canvas} em que a rede é desenhada na forma de diagramas nó-aresta.
+  %Maiores detalhes estão dados na Seção~\ref{sml}.
+}\label{ml}
+\end{figure}
+
+
+\subsection{Visualização interativa de redes utilizando comunicabilidade}\label{scom}
+Iniciei recentemente uma colaboração com Ernesto Estrada, pesquisador notório em Redes Complexas, autor de livros e de diversas publicações relevantes para a área~\cite{ern1,ern2,ern3,ern4}.
+O objetivo é desenvolver visualizações de redes complexas utilizando a medida de comunicabilidade proposta por Estrada para obter \textit{layouts} 2D e 3D de redes e para a detecção de comunidades. O resultado da versão atual do sistema está ilustrado e descrito na Figura~\ref{com}.
+Estrada considera que trata-se de contribuição relevante e daremos início à redação de artigo a ser submetido ao periódico ``Information Visualization''.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{compos}
+\caption{%
+  Layout 3D de rede obtido utilizando a medida de comunicabilidade proposta por Estrada~\cite{ern2,ern3}.
+  O vértice vermelho é o centroide da rede (média das posições
+  dos vértices).
+  O vértice verde é o centro da melhor esfera.
+  O halo azul é a superfície da melhor esfera.
+  Utilizando a tabela à direita, o usuário pode
+  modificar o número de comunidades na visualização
+  e a cor de cada comunidade.
+  Utilizando as ferramentas na barra preta no topo do \emph{canvas},
+  o usuário pode mudar o tamanho dos vértices, a transparência,
+  a proporcionalidade do tamanho do vértice ao grau (número de vizinhos),
+  e a transparência das arestas.
+  Pode também mostrar ou esconder o centroide, o centro da esfera,
+  e o halo da esfera.
+  Pode reiniciar a visualização para configuração inicial. %a rotação e translação iniciais.
+  A interface também admite \emph{layouts} 2D e
+  apresenta elementos
+  correspondentes à esfera utilizando um círculo.
+  %Maiores informações estão na Seção~\ref{scom}.
+}\label{com}
+\end{figure}
+
+
+\subsection{Interface para visualização e análise de redes longitudinais}\label{sevo}
+As redes sociais estão em constante transformação, i.e. vértices e arestas são
+acrescentados e removidos ao longo de sua existência.
+Portanto, consideramos pertinente o desenvolvimento de uma interface
+para análise de redes longitudinais (\emph{longitudinal, time-evolving, dynamic networks}).
+Uma versão preliminar desta interface que renderiza a rede longitudinal por meio de animações e inclui algumas funcionalidades de análise está disponível em \url{http://rfabbri.vicg.icmc.usp.br:3000/evolution} e ilustrada na Figura~\ref{evo}.
+Planejamos finalizar a implementação e a redação de um artigo para apresentação dos resultados até o final da vigência da bolsa, i.e. até 30/Jun/2019.
+%Um artigo preliminar, em que descrevemos o layout utilizado, desenvolvido pelo bolsista para a visualização de redes longitudinais livres de escala, está disponível em~\cite{versinus} e deverá ser submetido ao simpósio internacional ``Graph Drawing and Network Visualization'', junto ao trabalho descrito na Seção~\ref{sml}.
+%A interface está ilustrada na Figura~\ref{evo} e mais informações constam na legenda.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{evo}
+\caption{%
+  Na área superior da figura tem-se o canvas em que é exibida a rede, e log oabaixo um espaço para apresentação de informações textuais ao usuário, sob demanda. O gráfico na região inferior apresenta linhas do tempo com as frações de nós hubs, intermediários e periféricos.
+  O usuário pode iniciar ou pausar a animação, e selecionar algum dos frames clicando no gráfico.
+  Através de atalhos de teclado o usuário pode requisitar informações específicas sobre os vértices ou sobre a rede em um determinado momento.
+  %Mais informações estão na Seção~\ref{sevo}.
+}\label{evo}
+\end{figure}
+https://www.overleaf.com/project/5cf9c9df31d4f40fe5b98458
+\subsection{Interface para visualização de redes enriquecidas com texto}
+Está em desenvolvimento uma interface para a análise de redes em que cada vértice possui texto associado.
+Esta estrutura é útil e.g. para análise de redes sociais, em que cada vértice representa um participante, e cada participante está vinculado a texto referente a suas postagens e comentários;
+também para redes de colaboração científica, em que cada vértice representa um pesquisador, e cada pesquisador está vinculado a texto associado a suas publicações, por exemplo.
+A proposta  é permitir ao usuário selecionar conjuntos de vértices manualmente ou por meio  do aproveitamento de métodos automatizados,
+e então exibir características do texto destes grupos (palavras mais incidentes,
+estatísticas de \emph{synsets} da Wordnet~\cite{wn}, estatísticas da escrita como tamanho de palavras, percentagem de adjetivos, etc.) e também permitir a observação de diferenças
+entre os textos de diferentes grupos, principalmente através da distância estatística robusta, derivada do teste de Kolmogorov-Smirnov proposto anteriormente pelo bolsista~\cite{ks}.
+Esta interface está em implementação, a partir de métodos já implementados em trabalhos anteriores, e pretendemos finalizá-la até o término de vigência da bolsa. Caso haja tempo hábil, pretendemos validá-la por meio de estudos de caso em redes sociais e de colaboração científica.
+%sido implementados~\cite{percolation}.
+%A interface deverá constar em \url{http://rfabbri.vicg.icmc.usp.br} e está prevista para disponibilização até o final da vigência da bolsa, i.e. até 30/Jun/2019.
+
+
+\subsection{Visualização para auxílio à análise de paisagens sonoras}\label{pa}
+Por sugestão da coordenadora do projeto,
+o bolsista estudou um artigo~\cite{eld} cujos autores argumentam que os métodos em uso na área de paisagens sonoras dão ênfase à descrição dos fenômenos ou no domínio do tempo ou no domínio da frequência, e por isso mostram-se incapazes de capturar informações importantes da dinâmica espectro-temporal das paisagens sonoras. Tal dinâmica espectro-temporal, segundo os autores, têm papel determinante na compreensão da evolução dos ambientes ecológicos.
+Eles apontam a necessidade de métodos que preservem essa dinâmica espectro-temporal e sugerem um método em particular, o \emph{Shift-Invariant Probabilistic Latent Component Analysis} em duas dimensões (SIPLC2D).
+Mesmo o artigo sendo relativamente recente, foi necessário atualizar os códigos disponibilizados para executar as rotinas: mudança de nome das classes, tipos numéricos, mudança na tradução de tipos de numéricos, etc.
+%Os procedimentos necessários para a execução dos códigos está, junto com o exemplo de resultado aqui apresentado, neste repositório:~\cite{ps}.
+Em estudo com um arquivo de áudio com cantos de duas espécies de pássaro verificou-se que o método de fato separa as fontes sonoras, como descrito na Figura~\ref{ps}.
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{fontes__}
+\caption{%
+  Espectrogramas do áudio reconstruídos utilizando apenas
+  as componentes detectadas pelo método SIPLC2D.
+  O espectrograma 0 corresponde ao ruído de fundo,
+  o espectrograma 1 corresponde ao canto de uma de duas espécies de pássaros
+  presentes no áudio original,
+  o espectrograma 2 corresponde ao canto da outra espécie.
+  A separação não é perfeita, mas suficiente para motivar investigações adicionais no contexto do estudo de paisagens acústicas em ecologia.
+  %Mais informações estão na Seção~\ref{pa}.
+}\label{ps}
+\end{figure}
+
+Caso o projeto seja prorrogado o candidato pretende desenvolver uma interface preliminar que permita aos colaboradores avaliar o potencial do método no contexto dos estudos em andamento.
+Basicamente, o usuário selecionaria um trecho de áudio para análise, e a interface
+então apresentaria as componentes detectados.
+O usuário poderia, por fim aplicar a detecção das componentes a um trecho completo de áudio,
+de maneira a indicar todas as ocorrências encontradas. Isso seria um ponto de partida para analisar a conveniência de incorporar a técnica ao ferramental de visualização sendo desenvolvido no âmbito do projeto.
+%Esta interface deve ser implementada até o término da vigência da bolsa.
+%i.e. até 30/Jun/2019.
+
+%\subsection{Interface interativa para visualização de expressões genéticas relacionadas ao câncer}\label{gene}
+%Os métodos de medição de expressões gênicas tem avançado bastante nos últimos anos, gerando uma grande quantidade de dados, muitas vezes subutilizados para análise e efetiva obtenção de conhecimento.
+%Neste contexto, pesquisadores da UFRJ, INCA (Instituto Nacional do Câncer) e Instituto Fiocruz propuseram  utilizar de visualização de dados (também mineração de dados) para auxiliar na pesquisa em tratamentos de câncer, especialmente do câncer de mama.
+%O bolsista disponibilizou uma interface web para análise de expressões gênicas correlacionadas ao logo de todos os tipos de células cancerígenas:~\cite{can}. A interface está atualmente em avaliação pelos pesquisadores para posterior melhora e apresentação à comunidade científica provavelmente através de publicação internacional. A Figura~\ref{igene} ilustra a ferramenta em uso e maiores detalhes estão na legenda.
+
+%\begin{figure}[h!]
+%\centering
+%  \includegraphics[width=0.6\linewidth]{igene_}
+% \caption{%
+%  A visualização de expressões genéticas conectadas através da correlação.
+%  A interface é inicializada pela escolha de um gene de interesse,
+%  e mais genes são dispostos no aro seguinte
+%  quando relacionados a um gene clicado.
+%  A correlação mínima para que genes sejam considerados relacionados
+%  é escolhida através da \emph{widget} na parte superior (um \emph{slider}).
+%  No lado direito estão ferramentas para zoom e para reposicionar os genes
+%  de um aro em um aro de raio maior, útil quando há muitos genes
+%  no mesmo aro.
+%  Os campos de texto, também à direita, trazem informações
+%  do gene relacionado à última elipse na qual o analista sobrepôs o mouse,
+%  e informações sobre o estado da visualização.
+%  Ao clicar com o botão direito em uma elipse, a visualização é reiniciada
+%  com o gene correspondente no centro.
+%  Maiores informações estão na Seção~\ref{gene}.
+%}\label{igene}
+%\end{figure}
+
+\section{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
+Desenvolvi métodos, programei interfaces, escrevi artigos.
+Acredito estar auxiliando no andamento do projeto, em conformidade com a bolsa TT5.
+
+\section{Mudanças ao Plano de Atividades}
+Foi solicitada prorrogação do projeto de pesquisa ao qual esta bolsa é vinculada até dezembro de 2019. Se concedido, pretendemos solicitar prorrogação da bolsa TT5 por dois meses, completando 24 meses. Espera-se assim viabilizar as finalizações previstas e as demais contribuições planejadas na Seção~\ref{desc}.
+%que eu e a coordenadora considerarmos cabível para a conclusão das atividades.
+
+\section{Apreciação do desempenho do bolsista (escrita pela coordenadora)}
+% para Cristina escrever
+O bolsista tem grande conhecimento em métodos na área de redes complexas e em programação. Assim, tem contribuído significativamente no desenvolvimento de ferramentas que mostram-se fundamentais como prova-de-conceito de diversas técnicas investigadas no âmbito do projeto. Ele tem interagido mais intensamente com os pesquisadores que atuam na frente de pesquisa em métodos multinível em redes complexas, com potencial para interagir também com pesquisadores que atuam na frente de pesquisa em paisagens acústicas. Acredito também que o projeto apresentou a ele uma nova gama de conhecimentos em visualização de dados, abrindo novas perspectivas para a sua atuação futura como pesquisador. Minha avaliação é que o bolsista está contribuindo de maneira relevante para ampliar os resultados gerados no âmbito do projeto de pesquisa.
+\bibliographystyle{unsrt}
+\bibliography{pbib}
+
+\end{document}
+%
+%
+%
+%
+%
+
