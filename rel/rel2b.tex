@@ -27,7 +27,7 @@
  \textbf{Relatório 2, bolsa TT5, processo 2017/14778-4}\\
 Processo vinculado: \textbf{2017/05838-3} \\
 Coordenadora: \textbf{Dra. Maria Cristina Ferreira de Oliveira} \\
-Bolsista: \textbf{Dr. Renato Fabbri} \\
+Bolsista: \textbf{Dr. Renato Fabbri}
 
 \section{Informação sobre o nível e período de usufruto da Bolsa}
 A bolsa é TT5 (Treinamento Técnico nível 5), vigente de 01/Set/2017 até 30/Jun/2019.
@@ -46,7 +46,11 @@ um método para visualização e navegação de redes bipartidas assistido por e
     A interface está ilustrada na Figura~\ref{ml}.
     Apresentamos os resultados em um artigo que submetemos à conferência internacional ``Graph Drawing and Network Visualization''.
     Como o artigo foi rejeitado, submeteremos a uma nova instância, provavelmente para a ``International Conference on Information Visualization Theory and Applications''.
-    A interface está acessível  publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown}.
+    A interface está acessível  publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown}, e o vídeo expositivo em \url{https://youtu.be/-d9be7aTkUM}.
+Uma nova versão da interface foi desenvolvida utilizando layout em tempo real e arestas híbridas (ligando nós em níveis diferentes):
+\url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}, vídeo: \url{https://youtu.be/VdAVE4AHfi8}. Esta versão não será descrita aqui detalhadamente nem receberá figura devido à brevidade
+exigida para este relatório.
+
 
 \begin{figure}[h!]
 \centering
@@ -67,10 +71,6 @@ um método para visualização e navegação de redes bipartidas assistido por e
   %Maiores detalhes estão dados na Seção~\ref{sml}.
 }\label{ml}
 \end{figure}
-
-Uma nova versão da interface foi desenvolvida utilizando layout em tempo real e arestas híbridas (ligando nós em níveis diferentes):
-\url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}. Esta versão não será descrita aqui detalhadamente nem receberá figura devido à brevidade
-exigida para este relatório.
 
 \subsection{Visualização interativa de redes utilizando comunicabilidade}\label{scom}
 Iniciei recentemente uma colaboração com Ernesto Estrada, pesquisador notório em Redes Complexas, autor de livros e de diversas publicações relevantes para a área~\cite{ern1,ern2,ern3,ern4}.
@@ -131,14 +131,13 @@ A proposta  é permitir ao usuário selecionar conjuntos de vértices manualment
 e então exibir características do texto destes grupos (palavras mais incidentes,
 estatísticas de \emph{synsets} da Wordnet~\cite{wn}, estatísticas da escrita como tamanho de palavras, percentagem de adjetivos, etc.) e também permitir a observação de diferenças
 entre os textos de diferentes grupos, principalmente através da distância estatística robusta, derivada do teste de Kolmogorov-Smirnov proposto anteriormente pelo bolsista~\cite{ks}.
-Uma versão mínima desta interface já está implementada, e pretendemos enriquecer a ferramenta com métodos já implementados em trabalhos anteriores. Caso haja tempo hábil, pretendemos validá-la por meio de estudos de caso em redes sociais e de colaboração científica.
+Uma versão mínima desta interface já está implementada: \url{https://youtu.be/MH1D8S75d7E}, e pretendemos enriquecer a ferramenta com métodos já implementados em trabalhos anteriores. Pretendemos validá-la por meio de estudos de caso em redes sociais e de colaboração científica.
 
 \subsection{Visualização para auxílio à análise de paisagens sonoras}\label{pa}
 Por sugestão da coordenadora do projeto,
 o bolsista estudou um artigo~\cite{eld} cujos autores argumentam que os métodos em uso na área de paisagens sonoras dão ênfase à descrição dos fenômenos ou no domínio do tempo ou no domínio da frequência, e por isso mostram-se incapazes de capturar informações importantes da dinâmica espectro-temporal das paisagens sonoras. Tal dinâmica espectro-temporal, segundo os autores, têm papel determinante na compreensão da evolução dos ambientes ecológicos.
 Eles apontam a necessidade de métodos que preservem essa dinâmica espectro-temporal e sugerem um método em particular, o \emph{Shift-Invariant Probabilistic Latent Component Analysis} em duas dimensões (SIPLC2D).
 Mesmo o artigo sendo relativamente recente, foi necessário atualizar os códigos disponibilizados para executar as rotinas: mudança de nome das classes, tipos numéricos, mudança na tradução de tipos de numéricos, etc.
-%Os procedimentos necessários para a execução dos códigos está, junto com o exemplo de resultado aqui apresentado, neste repositório:~\cite{ps}.
 Em estudo com um arquivo de áudio com cantos de duas espécies de pássaro verificou-se que o método de fato separa as fontes sonoras, como descrito na Figura~\ref{ps}.
 \begin{figure}[h!]
 \centering
@@ -155,13 +154,14 @@ Em estudo com um arquivo de áudio com cantos de duas espécies de pássaro veri
 }\label{ps}
 \end{figure}
 
-O candidato desenvolveu uma interface que permite aos colaboradores avaliar o potencial do método no contexto dos estudos em andamento: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape/min}.
+O bolsista desenvolveu uma interface que permite aos colaboradores avaliar o potencial do método no contexto dos estudos em andamento: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape/min} e vídeo \url{https://youtu.be/bPZAGT1PzjM}.
 Basicamente, o usuário seleciona um trecho de áudio para análise, e a interface
 então apresenta as componentes detectados.
 A última etapa está em desenvolvimento: o usuário poderá,
 por fim, aplicar a detecção das componentes a um trecho completo de áudio,
 de maneira a indicar todas as ocorrências encontradas.
 Isso é um ponto de partida para analisar a conveniência de incorporar a técnica ao ferramental de visualização sendo desenvolvido no âmbito do projeto.
+O bolsista estabeleceu contato com os autores do artigo~\cite{eld} para explorar o método.
 
 \section{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
 Desenvolvi métodos, programei interfaces, escrevi e submeti artigos.
