@@ -179,8 +179,38 @@ enquanto a interface inicial foi realocada para: \url{http://rfabbri.vicg.icmc.u
 }\label{ps}
 \end{figure}
 
+\subsection{Disponibilização de dados ligados de redes sociais}
+Para dar suporte à pesquisa realizada no VICG, entrei em contato com o
+Data.World (apresentado para mim pela coordenadora do projeto)
+e estabeleci uma colaboração.
+Pudemos então disponibilizar publicamente, em RDF, dados das seguintes redes sociais:
+Facebook, Twitter, Email, IRC, Participa.br, Cidade Democrática, AA.
+Ao todo, estes dados formam uma rede com centenas de milhares (talvez até alguns milhões)
+de participantes, relacionados em geral por amizades, interações, ou critérios de semelhança.
+Os dados estão disponíveis em:
+\cite{}.
+Foi possível também disponibilizar uma biblioteca simples para o acesso aos dados,
+sem a utilização direta da API do Data.World ou a necessidade de quaisquer credenciais:
+\cite{}.
+
+
 \subsection{Experimentos de visualização para escalar iniciativas sociais}
-Para testar a aplicabilidade das estratégias multinível 
+Em continuidade aos trabalhos reportados em~\cite{tese,virus},
+para testar a aplicabilidade das estratégias multiníveis na ``coleta e difusão de informação e bens'',
+ou na ``propagação de tratos sociais'', iniciei a escrita de software para alcançar interfaces
+que permitam ao usuário iniciar processos de interação sociais em cadeia, i.e. que envolvem
+a propagação de alguma informação (e.g. uma proposta).
+Estes testes iniciais foram aproveitados para testar sistemas de partículas (recurso WebGL),
+medições de duração (para otimização) e projeções planares.
+Os códigos desenvolvidos são todos escritos em JavaScript e são executados no cliente,
+com carga mínima para o servidor.
+O framework utilizado difere dos anteriores, com foco em Meteor.js,
+nas biblitecas Pixi.js (para mapeamentos visuais de dados e elementos visuais interativos),
+Tone.js (para mapeamentos sonoros dos dados),
+e em requisições HTTP com \emph{queries} SparQL para acesso dos dados da LOSD.
+A Figura~\ref{exp} ilustra minimamente as interfaces desenvolvidas.
+
+\subsection{Parcerias internacionais}
 
 \section{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
 Desenvolvi métodos, programei interfaces, escrevi e submeti artigos.
