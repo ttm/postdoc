@@ -1,0 +1,199 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text.
+\usepackage{fullpage} % changes the margin
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref} 	%% Use to fix Figure or Table: ex: \begin{table}[H]
+\hypersetup{
+	%pagebackref=true,
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico},
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	allbordercolors=black,
+	bookmarksdepth=4
+}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{document}
+\noindent
+\normalsize
+ \textbf{Relatório 3, bolsa TT5, processo 2017/14778-4}\\
+Processo vinculado: \textbf{2017/05838-3} \\
+Coordenadora: \textbf{Dra. Maria Cristina Ferreira de Oliveira} \\
+Bolsista: \textbf{Dr. Renato Fabbri}
+
+\section{Informação sobre o nível e período de usufruto da Bolsa}
+A bolsa é TT5 (Treinamento Técnico nível 5), vigente de 01/Set/2017 até 30/Jun/2019.
+O período referente a este relatório é de 31/Jul/2018 até 30/Ago/2019,
+de acordo com a prorrogacao concedida pela FAPESP.
+Eu, o bolsista, continuo, de 30/Ago/2019, ate hoje, 30/Jan/2019, em atividade eventual, 
+por escolha própria, principalmente mantendo comunicacao com os pesquisadores e
+mantendo as ferramentas disponibilizadas online.
+Também, por exemplo, para a entrega deste relatorio na data correta.
+
+\section{Atividades realizadas e em andamento}\label{desc}
+As principais contribuicoes no desenvolvimento das ferramentas
+e a redacao e submissao de artigos estao descritas nas proximas secoes.
+Visei aplicar meus conhecimentos e proficiências nas atividades previstas no projeto desta bolsa TT5
+e no projeto de pesquisa associado.
+Devido ao período curto assiciado à renovacao, e ao formato curto requisitado
+para este relatório, este documento estende o relatório 2
+desta mesma bolsa, evitado repetir as informações.
+
+\subsection{Visualização interativa de redes bipartidas assistida por estratégias multinível}\label{sml}
+Em colaboração com os pesquisadores Alan Valejo, Alneu Andrade, e Cristina Oliveira,
+implementei uma forma de navegação das redes em representação multinível
+utilizando arestas híbridas. A navegação descrita no relatório 2 utiliza retângulos translúcidos
+para manter super-vértices agrupados, e representa os (sub-)vértices nos retângulos.
+Nesta nova navegação, reiterada pelo Alan como intuitiva e talvez ideal como modelo de referência,
+quando um super-vértice é expandido/aberto, os vértices sao postos no canvas indidivualmente, sem
+o agrupamento pelo super-vértice original, e arestas envolvendo estes vértices são:
+1) com vizinho, se vizinho representado;
+2) com pai do vizinho, se pai do vizinho representado;
+3) com filhos do vizinho, se filhos do vizinho representados.
+
+As arestas implicadas por 2) e 3) são arestas híbridas.
+Este modelo implica na necessidade de ajustes no layout quando
+os supervertices sao expandidos ou colapsados.
+Portanto, esta implementacao envolve tambem layout em tempo real,
+e novos algoritmos de layout (teoricamente) os mais leves possivel.
+
+Planejamos 
+dois incrementos para as interfaces desenvolvidas nesta linha de atuação:
+adicionar novamente as widgets e funcionalidades relacionadas aos histogramas
+de grau e coeficiente de clusterizacao.
+Integrar o BNOC~\cite{bnoc}, ferramenta para síntese de redes bipartidas.
+Assim, ate a entrega da versao final deste relatorio (30/Jan/2019),
+planejamos ter uma interface de visualizacao consistente para o estudo de estrategias
+multiniveis em redes bipartidas, e incrementos no artigo rejeitado (descrito no relatório anterior)
+para ressubmissão.
+
+Para melhorar a qualidade do software, sem prioridade no momento,
+concebemos algumas tarefas principais.
+Sao ``issues'' para serem vinculadas ao repositorio Git principal:
+refatorar codigo para separar as aplicacoes e limpar as aplicacoes;
+loop assíncrono para calculo de posicoes dos vertices,
+atualizando quantos loops conseguiu realizar, para auxiliar o usuário a escolher um algoritmo de layout de rede.
+Particle system para vértices e arestas (já testei em novos experimentos, permite a visualização de redes muito maiores. Uso da GPU para cálculo vetorial (importante para obter layouts de redes).  Aplicacao mais voltada para ``visual analytics'' considerando os metadados. Fazer um script Bash para colocar no ``cron'' e subir as interfaces sempre que for dado reboot no servidor.
+
+    A nova interface está acessível  publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}, e o vídeo expositivo em \url{https://youtu.be/VdAVE4AHfi8}.
+    A Figura~\ref{ml} exemplifica a interface.
+
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{overall____}
+\caption{%
+  Interface do sistema de visualização de redes bipartidas utilizando a estratégia multinível.
+  Esta figura é ilustrativa de uma interface de visualização de dados, com elementos para a seleção inicial dos dados e parametrização do mapeamento visual, para a especificação de transformações no mapeamento visual ao longo da interação, e para alterar as propriedades da visualização resultante.
+  Os elementos superiores, botão no topo (1) e caixa cinza (2) permitem a parametrização dos dados de entrada do processo de mapeamento visual.
+  Ao acionar o botão (3), a rede é renderizada, utilizando o algoritmo de o \emph{layout} de rede selecionado em (4), aonde estão reunidos outros \emph{widgets} auxiliares para selecionar,
+  mostrar/esconder os links,
+  e para a interface exibir informação textual requisitada sob demanda
+  pelo usuário ou que pode ser útil para apoiar a navegação.
+  Em (5) tem-se uma tabela interativa com informações sobre as camadas e níveis
+  da rede bipartida e que pode ser usada para modificar a visualização da rede apresentada no \emph{canvas}.
+  Em (6) está a barra de ferramentas que habilita a navegação pela rede e
+  possibilita ajustes finos na visualização.
+  Em (7) está o \emph{canvas} em que a rede é desenhada na forma de diagramas nó-aresta.
+  %Maiores detalhes estão dados na Seção~\ref{sml}.
+}\label{ml}
+\end{figure}
+
+\subsection{Visualização interativa de redes utilizando comunicabilidade}\label{scom}
+Na continuidade da colaboração com Ernesto Estrada, pesquisador notório em Redes Complexas, autor de livros e de diversas publicações relevantes para a área~\cite{ern1,ern2,ern3,ern4},
+ele apresentou a interface já na ``Latin American Conference on Complex Networks'' (5-9/Ago/2019):
+\url{http://rfabbri.vicg.icmc.usp.br:3000/communicability}.
+Esta interface passou por diversas versões, recebeu novos algoritmos de clusterizacao e de reducao de dimensionaldiade, melhoras no uso das medidas de comunicabilidade, etc. A Figura~\ref{com} ilustra a forma atual da interface.
+Iniciamos a escrita do artigo a ser submetido sobre o software desenvolvido e dua utilidade.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{compos}
+\caption{%
+  Layout 3D de rede obtido utilizando a medida de comunicabilidade proposta por Estrada~\cite{ern2,ern3}.
+  O vértice vermelho é o centroide da rede (média das posições
+  dos vértices).
+  O vértice verde é o centro da melhor esfera.
+  O halo azul é a superfície da melhor esfera.
+  Utilizando a tabela à direita, o usuário pode
+  modificar o número de comunidades na visualização
+  e a cor de cada comunidade.
+  Utilizando as ferramentas na barra preta no topo do \emph{canvas},
+  o usuário pode mudar o tamanho dos vértices, a transparência,
+  a proporcionalidade do tamanho do vértice ao grau (número de vizinhos),
+  e a transparência das arestas.
+  Pode também mostrar ou esconder o centroide, o centro da esfera,
+  e o halo da esfera.
+  Pode reiniciar a visualização na configuração inicial. %a rotação e translação iniciais.
+  A interface também admite \emph{layouts} 2D e
+  apresenta elementos correspondentes à esfera utilizando um círculo.
+}\label{com}
+\end{figure}
+
+
+\subsection{Interface para visualização e análise de redes longitudinais}\label{sevo}
+Iniciamos a consideracao do artigo rejeitado para ressubmissao.
+
+\subsection{Interface para visualização de redes enriquecidas com texto}
+A interface mínima já implementada (\url{https://youtu.be/MH1D8S75d7E}),
+continua em consideração e amadurecimento para descrição a aprodundamento
+do modelo mínimo de visualização com técnicas de redes complexas, mineração
+de texto, e distâcias estatísticas.
+
+\subsection{Visualização para auxílio à análise de paisagens sonoras}\label{pa}
+Desenvolvi uma nova interface de análise de paisagens sonoras com base no artigo~\cite{eld} cujos autores argumentam que os métodos em uso na área de paisagens sonoras dão ênfase à descrição dos fenômenos ou no domínio do tempo ou no domínio da frequência, e por isso mostram-se incapazes de capturar informações importantes da dinâmica espectro-temporal das paisagens sonoras. Tal dinâmica espectro-temporal, segundo os autores, têm papel determinante na compreensão da evolução dos ambientes ecológicos.
+
+Nesta nova versao, o usuario pode adicionar arquivos de áudio ou escolher algum dos disponíveis.
+Pode também a possibildiade de escolher o número de componentes para a decomposição do som original,
+e o código está preparado para adicionar customizações.
+As possibilidades de parametrização do SIPLC2D são muitas, e estamos considerando quais
+parametrizações devem ser disponibilizadas na interface.
+Além disso, dado que não conseguimos decompor o som original com base nas componentes de um
+trecho menor, por enquanto decidimos permitir a análise de um trecho pequeno para escolha da
+parametrização a ser aplicada em todo o áudio, pois o método é computacionalmente custoso.
+A Figura~\cite{ps} exemplifica a interface em operacao.
+Esta nova interface está disponível em: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape/min},
+enquanto a interface inicial foi realocada para: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape}.
+
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{fontes__}
+\caption{%
+  Espectrogramas do áudio reconstruídos utilizando apenas
+  as componentes detectadas pelo método SIPLC2D.
+  O espectrograma 0 corresponde ao ruído de fundo,
+  o espectrograma 1 corresponde ao canto de uma de duas espécies de pássaros
+  presentes no áudio original,
+  o espectrograma 2 corresponde ao canto da outra espécie.
+  A separação não é perfeita, mas suficiente para motivar investigações adicionais no contexto do estudo de paisagens acústicas em ecologia.
+  %Mais informações estão na Seção~\ref{pa}.
+}\label{ps}
+\end{figure}
+
+\subsection{Experimentos de visualização para escalar iniciativas sociais}
+Para testar a aplicabilidade das estratégias multinível 
+
+\section{Avaliação do impacto das atividades do bolsista sobre o andamento do projeto}
+Desenvolvi métodos, programei interfaces, escrevi e submeti artigos.
+Acredito estar auxiliando no andamento do projeto, em conformidade com a bolsa TT5.
+
+\section{Mudanças ao Plano de Atividades}
+Foi solicitada prorrogação do projeto de pesquisa ao qual esta bolsa é vinculada até dezembro de 2019. Solicitamos a prorrogação da bolsa TT5 por dois meses, completando 24 meses. Espera-se assim viabilizar as finalizações previstas e as demais contribuições planejadas na Seção~\ref{desc}.
+%que eu e a coordenadora considerarmos cabível para a conclusão das atividades.
+
+\section{Apreciação do desempenho do bolsista (escrita pela coordenadora)}
+% para Cristina escrever
+O bolsista tem grande conhecimento em métodos na área de redes complexas e em programação. Assim, tem contribuído significativamente no desenvolvimento de ferramentas que mostram-se fundamentais como provas-de-conceito de diversas técnicas investigadas no âmbito do projeto. Ele tem interagido mais intensamente com os pesquisadores que atuam na frente de pesquisa em métodos multinível em redes complexas, com potencial para interagir também com pesquisadores que atuam na frente de pesquisa em paisagens acústicas. Acredito também que o projeto apresentou a ele uma nova gama de conhecimentos em visualização de dados, abrindo novas perspectivas para a sua atuação futura como pesquisador. Minha avaliação é que o bolsista está contribuindo de maneira relevante para ampliar os resultados gerados no âmbito do projeto de pesquisa.
+\bibliographystyle{unsrt}
+\bibliography{pbib}
+
+\end{document}
