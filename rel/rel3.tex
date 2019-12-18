@@ -33,14 +33,13 @@ Bolsista: \textbf{Dr. Renato Fabbri}
 A bolsa é TT5 (Treinamento Técnico nível 5), vigente de 01/Set/2017 até 30/Jun/2019.
 O período referente a este relatório é de 31/Jul/2018 até 30/Ago/2019,
 de acordo com a prorrogacao concedida pela FAPESP.
-Eu, o bolsista, continuo, de 30/Ago/2019, ate hoje, 30/Jan/2019, em atividade eventual, 
-por escolha própria, principalmente mantendo comunicacao com os pesquisadores e
+Eu, o bolsista, continuo, de 30/Ago/2019, ate hoje, 17/Dez/2019, em atividade eventual, 
+por escolha própria, principalmente mantendo comunicacao com pesquisadores e
 mantendo as ferramentas disponibilizadas online.
 Também, por exemplo, para a entrega deste relatorio na data correta.
 
 \section{Atividades realizadas e em andamento}\label{desc}
-As principais contribuicoes no desenvolvimento das ferramentas
-e a redacao e submissao de artigos estao descritas nas proximas secoes.
+As principais contribuicoes estao descritas nas proximas secoes.
 Visei aplicar meus conhecimentos e proficiências nas atividades previstas no projeto desta bolsa TT5
 e no projeto de pesquisa associado.
 Devido ao período curto assiciado à renovacao, e ao formato curto requisitado
@@ -51,9 +50,9 @@ desta mesma bolsa, evitado repetir as informações.
 Em colaboração com os pesquisadores Alan Valejo, Alneu Andrade, e Cristina Oliveira,
 implementei uma forma de navegação das redes em representação multinível
 utilizando arestas híbridas. A navegação descrita no relatório 2 utiliza retângulos translúcidos
-para manter super-vértices agrupados, e representa os (sub-)vértices nos retângulos.
+para manter (sub-)vértices agrupados em seus super-vértices, representa os (sub-)vértices nos retângulos.
 Nesta nova navegação, reiterada pelo Alan como intuitiva e talvez ideal como modelo de referência,
-quando um super-vértice é expandido/aberto, os vértices sao postos no canvas indidivualmente, sem
+quando um super-vértice é expandido/aberto, os sub-vértices sao postos no canvas individualmente, sem
 o agrupamento pelo super-vértice original, e arestas envolvendo estes vértices são:
 1) com vizinho, se vizinho representado;
 2) com pai do vizinho, se pai do vizinho representado;
@@ -61,12 +60,11 @@ o agrupamento pelo super-vértice original, e arestas envolvendo estes vértices
 
 As arestas implicadas por 2) e 3) são arestas híbridas.
 Este modelo implica na necessidade de ajustes no layout quando
-os supervertices sao expandidos ou colapsados.
+os super-vertices sao expandidos ou colapsados.
 Portanto, esta implementacao envolve tambem layout em tempo real,
 e novos algoritmos de layout (teoricamente) os mais leves possivel.
 
-Planejamos 
-dois incrementos para as interfaces desenvolvidas nesta linha de atuação:
+Planejamos dois incrementos para as interfaces desenvolvidas nesta linha de atuação:
 adicionar novamente as widgets e funcionalidades relacionadas aos histogramas
 de grau e coeficiente de clusterizacao.
 Integrar o BNOC~\cite{bnoc}, ferramenta para síntese de redes bipartidas.
@@ -78,13 +76,13 @@ para ressubmissão.
 Para melhorar a qualidade do software, sem prioridade no momento,
 concebemos algumas tarefas principais.
 Sao ``issues'' para serem vinculadas ao repositorio Git principal:
-refatorar codigo para separar as aplicacoes e limpar as aplicacoes;
+refatorar e limpar o codigo para separar as aplicacoes;
 loop assíncrono para calculo de posicoes dos vertices,
-atualizando quantos loops conseguiu realizar, para auxiliar o usuário a escolher um algoritmo de layout de rede.
-Particle system para vértices e arestas (já testei em novos experimentos, permite a visualização de redes muito maiores. Uso da GPU para cálculo vetorial (importante para obter layouts de redes).  Aplicacao mais voltada para ``visual analytics'' considerando os metadados. Fazer um script Bash para colocar no ``cron'' e subir as interfaces sempre que for dado reboot no servidor.
+atualizando quantos loops conseguiu realizar, para auxiliar o usuário a escolher um algoritmo de layout de rede;
+\emph{particle system} para vértices e arestas (já testei em novos experimentos, permite a visualização de redes muito maiores. Uso da GPU para cálculo vetorial (importante para obter layouts de redes).  Aplicacao mais voltada para ``visual analytics'' considerando os metadados. Fazer um script Bash para colocar no ``cron'' e subir as interfaces sempre que for dado reboot no servidor.
 
-    A nova interface está acessível  publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}, e o vídeo expositivo em \url{https://youtu.be/VdAVE4AHfi8}.
-    A Figura~\ref{ml} exemplifica a interface.
+    A nova interface está acessível publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}, e o vídeo expositivo em \url{https://youtu.be/VdAVE4AHfi8}.
+    A Figura~\ref{ml} exemplifica a interface em uso.
 
 
 \begin{figure}[h!]
