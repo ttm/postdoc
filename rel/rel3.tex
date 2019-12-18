@@ -84,24 +84,13 @@ atualizando quantos loops conseguiu realizar, para auxiliar o usuário a escolhe
     A nova interface está acessível publicamente em \url{http://rfabbri.vicg.icmc.usp.br:3000/multilevel2/topdown2}, e o vídeo expositivo em \url{https://youtu.be/VdAVE4AHfi8}.
     A Figura~\ref{ml} exemplifica a interface em uso.
 
-
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.8\linewidth]{overall____}
+  \includegraphics[width=0.8\linewidth]{hybrid}
 \caption{%
-  Interface do sistema de visualização de redes bipartidas utilizando a estratégia multinível.
-  Esta figura é ilustrativa de uma interface de visualização de dados, com elementos para a seleção inicial dos dados e parametrização do mapeamento visual, para a especificação de transformações no mapeamento visual ao longo da interação, e para alterar as propriedades da visualização resultante.
-  Os elementos superiores, botão no topo (1) e caixa cinza (2) permitem a parametrização dos dados de entrada do processo de mapeamento visual.
-  Ao acionar o botão (3), a rede é renderizada, utilizando o algoritmo de o \emph{layout} de rede selecionado em (4), aonde estão reunidos outros \emph{widgets} auxiliares para selecionar,
-  mostrar/esconder os links,
-  e para a interface exibir informação textual requisitada sob demanda
-  pelo usuário ou que pode ser útil para apoiar a navegação.
-  Em (5) tem-se uma tabela interativa com informações sobre as camadas e níveis
-  da rede bipartida e que pode ser usada para modificar a visualização da rede apresentada no \emph{canvas}.
-  Em (6) está a barra de ferramentas que habilita a navegação pela rede e
-  possibilita ajustes finos na visualização.
-  Em (7) está o \emph{canvas} em que a rede é desenhada na forma de diagramas nó-aresta.
-  %Maiores detalhes estão dados na Seção~\ref{sml}.
+  Para além do descrito no relatório anterior, note os vértices de 3 níveis diferentes, relacionados por arestas
+  híbridas, sem a utilização de caixas para super-vértices expandidos.
+  Note também o componente para cálculo das posições dos vértices (i.e. do 'layout de rede') em tempo real.
 }\label{ml}
 \end{figure}
 
@@ -114,31 +103,24 @@ Iniciamos a escrita do artigo a ser submetido sobre o software desenvolvido e du
 
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.8\linewidth]{compos}
+  \includegraphics[width=0.8\linewidth]{com}
 \caption{%
-  Layout 3D de rede obtido utilizando a medida de comunicabilidade proposta por Estrada~\cite{ern2,ern3}.
-  O vértice vermelho é o centroide da rede (média das posições
-  dos vértices).
-  O vértice verde é o centro da melhor esfera.
-  O halo azul é a superfície da melhor esfera.
-  Utilizando a tabela à direita, o usuário pode
-  modificar o número de comunidades na visualização
-  e a cor de cada comunidade.
-  Utilizando as ferramentas na barra preta no topo do \emph{canvas},
-  o usuário pode mudar o tamanho dos vértices, a transparência,
-  a proporcionalidade do tamanho do vértice ao grau (número de vizinhos),
-  e a transparência das arestas.
-  Pode também mostrar ou esconder o centroide, o centro da esfera,
-  e o halo da esfera.
-  Pode reiniciar a visualização na configuração inicial. %a rotação e translação iniciais.
-  A interface também admite \emph{layouts} 2D e
-  apresenta elementos correspondentes à esfera utilizando um círculo.
+  Solução final encontrada em conjunto com o pesquisador Estrada.
+  Foi fixado o uso dos ângulos de comunicabilidades, e descartado o uso das distâncias.
+  Há uma redução de dimensionalidade para a detecção de comunidades,
+  outra para a obtenção das posições no plano ou espaço 3D.
+  Há diversos métodos de clusterização.
+  Fez-se também necessária a manuteção dos tempos associados às execuções,
+  pois alguns dos métodos são custosos quando há muitos vértices e/ou arestas.
 }\label{com}
 \end{figure}
 
 
 \subsection{Interface para visualização e análise de redes longitudinais}\label{sevo}
 Iniciamos a consideracao do artigo rejeitado para ressubmissao.
+As revisões obtidas na rejeição pareceram positivas quanto às contribuições potencialmente
+novas do trabalho. Há, porém, a necessidade de melhor contextualizar e disponibilizar a ferramenta
+com facilidades para o uso por uma pessoa não interna à pesquisa.
 
 \subsection{Interface para visualização de redes enriquecidas com texto}
 A interface mínima já implementada (\url{https://youtu.be/MH1D8S75d7E}),
@@ -147,49 +129,52 @@ do modelo mínimo de visualização com técnicas de redes complexas, mineraçã
 de texto, e distâcias estatísticas.
 
 \subsection{Visualização para auxílio à análise de paisagens sonoras}\label{pa}
-Desenvolvi uma nova interface de análise de paisagens sonoras com base no artigo~\cite{eld} cujos autores argumentam que os métodos em uso na área de paisagens sonoras dão ênfase à descrição dos fenômenos ou no domínio do tempo ou no domínio da frequência, e por isso mostram-se incapazes de capturar informações importantes da dinâmica espectro-temporal das paisagens sonoras. Tal dinâmica espectro-temporal, segundo os autores, têm papel determinante na compreensão da evolução dos ambientes ecológicos.
-
+Desenvolvemos uma nova interface de análise de paisagens sonoras com base no
+artigo~\cite{eld}.  
 Nesta nova versao, o usuario pode adicionar arquivos de áudio ou escolher algum dos disponíveis.
-Pode também a possibildiade de escolher o número de componentes para a decomposição do som original,
+Pode também escolher o número de componentes para a decomposição do som original,
 e o código está preparado para adicionar customizações.
-As possibilidades de parametrização do SIPLC2D são muitas, e estamos considerando quais
+As possibilidades de parametrização do SIPLC2D são muitas, portanto estamos avaliando quais
 parametrizações devem ser disponibilizadas na interface.
-Além disso, dado que não conseguimos decompor o som original com base nas componentes de um
+Além disso, dado que não conseguimos (ainda) decompor o som original nas componentes de um
 trecho menor, por enquanto decidimos permitir a análise de um trecho pequeno para escolha da
 parametrização a ser aplicada em todo o áudio, pois o método é computacionalmente custoso.
 A Figura~\cite{ps} exemplifica a interface em operacao.
 Esta nova interface está disponível em: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape/min},
 enquanto a interface inicial foi realocada para: \url{http://rfabbri.vicg.icmc.usp.br:3000/soundscape}.
 
+A Figura~\ref{ss} ilustra a forma atual da interface.
 
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.8\linewidth]{fontes__}
+  \includegraphics[width=0.8\linewidth]{ss}
 \caption{%
-  Espectrogramas do áudio reconstruídos utilizando apenas
-  as componentes detectadas pelo método SIPLC2D.
-  O espectrograma 0 corresponde ao ruído de fundo,
-  o espectrograma 1 corresponde ao canto de uma de duas espécies de pássaros
-  presentes no áudio original,
-  o espectrograma 2 corresponde ao canto da outra espécie.
-  A separação não é perfeita, mas suficiente para motivar investigações adicionais no contexto do estudo de paisagens acústicas em ecologia.
-  %Mais informações estão na Seção~\ref{pa}.
-}\label{ps}
+  A versão expandida da interface mínima para utilização de SIPLC2D na separação de fontes sonoras.
+  Nesta versão, o usuári pode subir novos arquivos de áudio, escolher o áudio para análise,
+  escolher o trecho para análise, o número de componentes, e ouvir individualmente cada componente
+  ou o trecho escolhido para análise.
+  O usuário também pode observar o histograma de qualquer componente, e pode fazer uso de algumas
+  funcionalidades para a seleção e audição de trechos de áudio.
+}\label{ss}
 \end{figure}
 
 \subsection{Disponibilização de dados ligados de redes sociais}
 Para dar suporte à pesquisa realizada no VICG, entrei em contato com o
-Data.World (apresentado para mim pela coordenadora do projeto)
+Data.World (apresentado para mim pela profa. Cristina, coordenadora do projeto)
 e estabeleci uma colaboração.
 Pudemos então disponibilizar publicamente, em RDF, dados das seguintes redes sociais:
 Facebook, Twitter, Email, IRC, Participa.br, Cidade Democrática, AA.
 Ao todo, estes dados formam uma rede com centenas de milhares (talvez até alguns milhões)
 de participantes, relacionados em geral por amizades, interações, ou critérios de semelhança.
 Os dados estão disponíveis em:
-\cite{}.
-Foi possível também disponibilizar uma biblioteca simples para o acesso aos dados,
+\url{https://data.world/rfabbri/linked-open-social-data}.
+Foi possível também disponibilizar uma biblioteca oficial e simples para o acesso a estes dados,
 sem a utilização direta da API do Data.World ou a necessidade de quaisquer credenciais:
-\cite{}.
+\url{https://pypi.org/project/losd/}.
+Um artigo com uma descrição suscinta destes dados está disponível em:
+\url{https://github.com/ttm/linkedOpenSocialDatabase/raw/master/mdpi/template.pdf},
+com arquivo suplementar em:
+\url{https://github.com/ttm/linkedOpenSocialDatabase/raw/master/supplementaryDocument.pdf}.
 
 
 \subsection{Experimentos de visualização para escalar iniciativas sociais}
@@ -200,8 +185,10 @@ que permitam ao usuário iniciar processos de interação sociais em cadeia, i.e
 a propagação de alguma informação (e.g. uma proposta).
 Estes testes iniciais foram aproveitados para testar sistemas de partículas (recurso WebGL),
 medições de duração (para otimização) e projeções planares.
-Os códigos desenvolvidos são todos escritos em JavaScript e são executados no cliente,
-com carga mínima para o servidor.
+Os códigos desenvolvidos estão todos em JavaScript e são executados no cliente,
+com carga mínima para o servidor,
+incluindo acesso aos dados ligados, derivação de redes, e obtenção de sequência de redes
+em estratégia multinível.
 O framework utilizado difere dos anteriores, com foco em Meteor.js,
 nas biblitecas Pixi.js (para mapeamentos visuais de dados e elementos visuais interativos),
 Tone.js (para mapeamentos sonoros dos dados),
